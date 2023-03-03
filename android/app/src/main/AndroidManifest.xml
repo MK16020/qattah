@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.qatah_project">
+    package="com.example.qattah_project">
     <application
-        android:label="qatah_project"
+        android:label="qattah_project"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

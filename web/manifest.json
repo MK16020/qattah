@@ -1,6 +1,6 @@
 {
-    "name": "qatah_project",
-    "short_name": "qatah_project",
+    "name": "qattah_project",
+    "short_name": "qattah_project",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
