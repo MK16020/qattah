@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "156077316211",
+    "project_id": "qatah-app",
+    "storage_bucket": "qatah-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156077316211:android:00c96615d227ea74db3206",
+        "android_client_info": {
+          "package_name": "com.example.qattah_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156077316211-tdiddvnedf9159ogakii7e9qhuvtvfi7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCOceXjAixt3OpIVKG1nByn2ftmAf5QoY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156077316211-tdiddvnedf9159ogakii7e9qhuvtvfi7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
