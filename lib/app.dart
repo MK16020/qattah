@@ -6,10 +6,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: HomePage(),
-      ),
+    return MaterialApp(
+      home: const Scaffold(body: HomePage()),
+      theme: ThemeData(fontFamily: 'AllGenders'),
       debugShowCheckedModeBanner: false,
     );
   }
