@@ -29,6 +29,13 @@
             {
               "client_id": "156077316211-tdiddvnedf9159ogakii7e9qhuvtvfi7.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "156077316211-sc8llpbd6vr1lc65eo625rv9tnsre3gm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.qattahProject"
+              }
             }
           ]
         }
