@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qattah_project/constants/qcolors.dart';
 
 class QAccountOption extends StatelessWidget {
   const QAccountOption({super.key, required this.icon, required this.title});
@@ -10,7 +11,10 @@ class QAccountOption extends StatelessWidget {
     return ListTile(
       leading: icon,
       title: Text(title),
-      trailing: const Icon(Icons.keyboard_arrow_left_rounded),
+      trailing: const Icon(
+        Icons.keyboard_arrow_left_rounded,
+        color: QLightGrey,
+      ),
       onTap: () {},
     );
   }
