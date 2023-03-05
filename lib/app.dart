@@ -10,6 +10,7 @@ class App extends StatelessWidget {
       home: Scaffold(
         body: HomePage(),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
