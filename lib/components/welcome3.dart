@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qattah_project/constants/qcolors.dart';
 
 class Welcome3 extends StatelessWidget {
   const Welcome3({super.key});
@@ -19,7 +20,7 @@ class Welcome3 extends StatelessWidget {
             ),
             const Positioned(
               top: 376,
-              right: 28,
+              right: 24,
               child: Text(
                 'سجّل و تابع فواتيرك و',
                 style: TextStyle(color: Colors.white, fontSize: 40.0),
@@ -28,7 +29,7 @@ class Welcome3 extends StatelessWidget {
             ),
             const Positioned(
               top: 452,
-              right: 28,
+              right: 24,
               child: Text(
                 'نفقاتك المشتركة',
                 style: TextStyle(fontSize: 40.0, color: Colors.white),
@@ -37,7 +38,7 @@ class Welcome3 extends StatelessWidget {
             ),
             Positioned(
               top: 552,
-              right: 28,
+              right: 34,
               child: SizedBox(
                 width: 190,
                 height: 50,
@@ -45,26 +46,26 @@ class Welcome3 extends StatelessWidget {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
-                    elevation: 5,
-                    shadowColor: const Color.fromARGB(255, 114, 114, 114),
+                    elevation: 6,
+                    shadowColor: QDarkerGrey,
                     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
                   ),
-                  child: const Text('تسجيل الدخول', style: TextStyle(color: Color(0XFFB98286), fontSize: 20)),
+                  child: const Text('تسجيل الدخول', style: TextStyle(color: QMAinPink, fontSize: 20)),
                 ),
               ),
             ),
             Positioned(
               top: 652,
-              right: 28,
+              right: 34,
               child: SizedBox(
                 width: 190,
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0XFF33523E),
-                    elevation: 5,
-                    shadowColor: const Color.fromARGB(255, 114, 114, 114),
+                    backgroundColor: QMainGreen,
+                    elevation: 6,
+                    shadowColor: QDarkerGrey,
                     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
                   ),
                   child: const Text('إنشاء حساب', style: TextStyle(color: Colors.white, fontSize: 20)),

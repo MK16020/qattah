@@ -35,10 +35,14 @@ class Welcome1 extends StatelessWidget {
             ),
           ),
           const Positioned(
-              left: 140,
-              top: 560,
-              child: Text('!واحفظها عندنا',
-                  style: TextStyle(color: Colors.white, fontSize: 40.0), textAlign: TextAlign.center)),
+            left: 140,
+            top: 560,
+            child: Text(
+              'و احفظها عندنا!',
+              style: TextStyle(color: Colors.white, fontSize: 40.0),
+              textAlign: TextAlign.center,
+            ),
+          ),
         ],
       ),
     );

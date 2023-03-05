@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qattah_project/components/welcome1.dart';
 import 'package:qattah_project/components/welcome2.dart';
 import 'package:qattah_project/components/welcome3.dart';
+import 'package:qattah_project/constants/qcolors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -21,9 +22,9 @@ class _WelcomePageState extends State<WelcomePage> {
         PageView(
           controller: _controller,
           children: const [
-            Welcome3(),
-            Welcome2(),
             Welcome1(),
+            Welcome2(),
+            Welcome3(),
           ],
         ),
         Positioned(
@@ -34,7 +35,11 @@ class _WelcomePageState extends State<WelcomePage> {
             controller: _controller,
             count: 3,
             effect: const ExpandingDotsEffect(
-                activeDotColor: Color(0XFFB98286), dotColor: Colors.white, dotWidth: 12, dotHeight: 12),
+              dotWidth: 12,
+              dotHeight: 12,
+              activeDotColor: QMAinPink,
+              dotColor: Colors.white,
+            ),
           ),
         ),
       ],

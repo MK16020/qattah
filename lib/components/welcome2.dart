@@ -20,7 +20,7 @@ class Welcome2 extends StatelessWidget {
             top: 80,
             right: 28,
             child: Text(
-              '،ضيف فاتورتك',
+              'ضيف فاتورتك،',
               style: TextStyle(color: Color(0XFF343434), fontSize: 40.0),
               textAlign: TextAlign.center,
             ),

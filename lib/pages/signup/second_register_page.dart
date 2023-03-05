@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
 
+import '../../constants/qcolors.dart';
+
 class SecondRegisterPage extends StatefulWidget {
   const SecondRegisterPage({super.key});
 
@@ -28,15 +30,16 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
           onPressed: () {},
           icon: const Icon(
             Icons.arrow_back_ios,
-            color: Colors.black,
+            color: QDarkerGrey,
           ),
         ),
-        title: const Text('إنشاء حساب جديد', style: TextStyle(color: Colors.black)),
+        title: const Text('إنشاء حساب جديد', style: TextStyle(color: QMainGreen, fontSize: 24)),
+        elevation: 0.5,
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
       body: ListView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(24),
         children: [
           const SizedBox(height: 100),
           QTextField(
@@ -48,21 +51,38 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
             name: 'رقم الجوال (اختياري)',
             inputController: passwordController,
             isSecure: true,
-            hint: 'رقم الجوال (اختياري)',
+            hint: ' 0505xxxxxx',
           ),
-          const Text('استخدم الريال السعودي (SAR) كعملتي الاساسية '),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            child: Text(
+              'استخدم عملة الريال السعودي (SAR) كعملتي الاساسية ',
+              style: TextStyle(color: QMainGreen, fontSize: 16),
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
           InkWell(
             onTap: () {},
-            child: const Text('تغيير العملة'),
+            child: const Text(
+              'تغيير العملة',
+              style: TextStyle(color: QDarkerGrey, fontSize: 16),
+            ),
           ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 40),
           const QButton(
             title: 'تم',
           ),
-          const SizedBox(height: 50),
-          InkWell(
-            onTap: () {},
-            child: const Text('بالتسجيل أنت تقبل بشروط وأحكام قطّة'),
+          const SizedBox(height: 60),
+          Center(
+            child: InkWell(
+              onTap: () {},
+              child: const Text(
+                'بالتسجيل أنت تقبل بشروط وأحكام قَطّة',
+                style: TextStyle(color: QDarkerGrey, fontSize: 16),
+              ),
+            ),
           ),
         ],
       ),
