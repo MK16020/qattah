@@ -5,9 +5,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('test text'),
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        body: SafeArea(
+          child: Row(
+            children: const [
+              Text('هاي'),
+            ],
+          ),
+        ),
       ),
     );
   }
