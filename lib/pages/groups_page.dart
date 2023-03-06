@@ -14,40 +14,43 @@ class GroupsPage extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 36),
-            child: Text(
-              'تسهل المجموعات تقسيم الفواتير ومشاركة النفقات والمزيد',
-              style: TextStyle(
-                color: QDarkerGrey,
-                fontSize: 24,
-                fontWeight: FontWeight.w300,
+      body: Directionality(
+        textDirection: TextDirection.rtl,
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 36),
+              child: Text(
+                'تسهل المجموعات تقسيم الفواتير ومشاركة النفقات والمزيد',
+                style: TextStyle(
+                  color: QDarkerGrey,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w300,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          const SizedBox(height: 40),
-          Image.asset('assets/images/empty_groups.png'),
-          const SizedBox(height: 100),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 64),
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+            const SizedBox(height: 40),
+            Image.asset('assets/images/empty_groups.png'),
+            const SizedBox(height: 100),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 64),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+                ),
+                child: const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                  Text('إبدأ مجموعة', style: TextStyle(color: QMainPink, fontSize: 20)),
+                  Icon(Icons.group_add_outlined, color: QMainPink),
+                ]),
               ),
-              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Text('إبدأ مجموعة', style: TextStyle(color: QMainPink, fontSize: 20)),
-                Icon(Icons.group_add_outlined, color: QMainPink),
-              ]),
             ),
-          ),
-        ]),
+          ]),
+        ),
       ),
       backgroundColor: Colors.white,
     );

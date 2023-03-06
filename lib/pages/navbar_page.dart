@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/constants/qcolors.dart';
 import 'package:qattah_project/pages/activities_page.dart';
-import 'package:qattah_project/pages/add_qattah_page.dart';
 import 'package:qattah_project/pages/groups_page.dart';
 import 'package:qattah_project/pages/members_page.dart';
 import 'package:qattah_project/pages/settings_page.dart';
@@ -15,18 +14,12 @@ class NavbarPage extends StatefulWidget {
 }
 
 class _NavbarPageState extends State<NavbarPage> {
-  final pages = [
-    const MembersPage(),
-    const GroupsPage(),
-    const Temp(),
-    const ActivitiesPage(),
-    const SettingsPage()
-  ];
+  final pages = [const MembersPage(), const GroupsPage(), const Temp(), const ActivitiesPage(), const SettingsPage()];
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[currentIndex],
+      body: Directionality(textDirection: TextDirection.rtl, child: pages[currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'الأعضاء'),

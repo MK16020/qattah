@@ -54,8 +54,8 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
             hint: 'ex@gmail.com',
           ),
           const SizedBox(height: 50),
-          const QButton(
-            title: 'تغيير كلمة المرور ',
+          QButton(
+            title: 'تغيير كلمة المرور ', onPressed: () {  },
           ),
         ],
       ),

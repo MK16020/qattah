@@ -3,6 +3,7 @@ import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
 import 'package:qattah_project/components/q_title.dart';
 import 'package:qattah_project/constants/qcolors.dart';
+import 'package:qattah_project/pages/signup/second_register_page.dart';
 
 class FirstRegisterPage extends StatefulWidget {
   const FirstRegisterPage({super.key});
@@ -52,8 +53,14 @@ class _FirstRegisterPageState extends State<FirstRegisterPage> {
             hint: '• • • • • • • •',
           ),
           const SizedBox(height: 50),
-          const QButton(
+          QButton(
             title: 'التالي',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SecondRegisterPage()),
+              );
+            },
           ),
         ],
       ),

@@ -39,17 +39,19 @@ class AccountPage extends StatelessWidget {
                     icon: const Icon(
                       Icons.mode_edit_outline_outlined,
                       color: QMainPink,
-                    )),
-              ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 100),
-          const QAccountOption(icon: Icon(Icons.person_outline), title: 'تغيير اسم المستخدم'),
-          const QAccountOption(icon: Icon(Icons.mail_outline), title: 'تغيير البريد الإلكتروني'),
-          const QAccountOption(icon: Icon(Icons.vpn_key_outlined), title: 'تغيير كلمة المرور'),
-          const QAccountOption(icon: Icon(Icons.person_off_outlined), title: 'حذف الحساب'),
-        ],
+            const SizedBox(height: 100),
+            const QAccountOption(icon: Icon(Icons.person_outline), title: 'تغيير اسم المستخدم'),
+            const QAccountOption(icon: Icon(Icons.mail_outline), title: 'تغيير البريد الإلكتروني'),
+            const QAccountOption(icon: Icon(Icons.vpn_key_outlined), title: 'تغيير كلمة المرور'),
+            const QAccountOption(icon: Icon(Icons.person_off_outlined), title: 'حذف الحساب'),
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
+import 'package:qattah_project/pages/navbar_page.dart';
 
 import '../../constants/qcolors.dart';
 
@@ -71,8 +72,14 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
             ),
           ),
           const SizedBox(height: 40),
-          const QButton(
+          QButton(
             title: 'تم',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NavbarPage()),
+              );
+            },
           ),
           const SizedBox(height: 60),
           Center(

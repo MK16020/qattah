@@ -34,14 +34,17 @@ class MemberListPage extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          for (int i = 0; i < 4; i++) ...[
-            const MemberCard(),
-            const SizedBox(height: 10),
+      body: Directionality(
+        textDirection: TextDirection.rtl,
+        child: ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            for (int i = 0; i < 4; i++) ...[
+              const MemberCard(),
+              const SizedBox(height: 10),
+            ],
           ],
-        ],
+        ),
       ),
     );
   }

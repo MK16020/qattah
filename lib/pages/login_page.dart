@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
 import 'package:qattah_project/components/q_title.dart';
+import 'package:qattah_project/pages/navbar_page.dart';
 import 'package:qattah_project/pages/reset_password_page.dart';
 
 import '../constants/qcolors.dart';
@@ -75,8 +76,14 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           const SizedBox(height: 50),
-          const QButton(
+          QButton(
             title: 'تسجيل الدخول',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NavbarPage()),
+              );
+            },
           ),
         ],
       ),

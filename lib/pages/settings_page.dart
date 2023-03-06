@@ -17,46 +17,49 @@ class SettingsPage extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
-        children: [
-          const SizedBox(width: 100),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const AccountPage()),
-              );
-            },
-            child: const Row(
-              children: [
-                Expanded(flex: 1, child: AccountImage()),
-                Expanded(
-                  flex: 4,
-                  child: ListTile(
-                    title: Text('نورة '),
-                    subtitle: Text('ex@gmail.com'),
-                    trailing: Icon(Icons.keyboard_arrow_left_outlined),
+      body: Directionality(
+        textDirection: TextDirection.rtl,
+        child: ListView(
+          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
+          children: [
+            const SizedBox(width: 100),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AccountPage()),
+                );
+              },
+              child: const Row(
+                children: [
+                  Expanded(flex: 1, child: AccountImage()),
+                  Expanded(
+                    flex: 4,
+                    child: ListTile(
+                      title: Text('نورة '),
+                      subtitle: Text('ex@gmail.com'),
+                      trailing: Icon(Icons.keyboard_arrow_left_outlined),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 80),
-          const QAccountOption(icon: Icon(Icons.notifications_on_outlined), title: 'الإشعارات'),
-          const QAccountOption(icon: Icon(Icons.remove_red_eye_outlined), title: 'سياسة الخصوصية'),
-          const QAccountOption(icon: Icon(Icons.phone_enabled_outlined), title: 'تواصل معنا'),
-          const SizedBox(
-            height: 50,
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'تسجيل الخروج',
-              style: TextStyle(color: QLightestGreen),
+            const SizedBox(height: 80),
+            const QAccountOption(icon: Icon(Icons.notifications_on_outlined), title: 'الإشعارات'),
+            const QAccountOption(icon: Icon(Icons.remove_red_eye_outlined), title: 'سياسة الخصوصية'),
+            const QAccountOption(icon: Icon(Icons.phone_enabled_outlined), title: 'تواصل معنا'),
+            const SizedBox(
+              height: 50,
             ),
-          ),
-        ],
+            TextButton(
+              onPressed: () {},
+              child: const Text(
+                'تسجيل الخروج',
+                style: TextStyle(color: QLightestGreen),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

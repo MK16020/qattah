@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/constants/qcolors.dart';
+import 'package:qattah_project/pages/login_page.dart';
+import 'package:qattah_project/pages/signup/first_register_page.dart';
 
 class Welcome3 extends StatelessWidget {
   const Welcome3({super.key});
@@ -43,7 +45,12 @@ class Welcome3 extends StatelessWidget {
                 width: 190,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const LoginPage()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     elevation: 6,
@@ -61,7 +68,12 @@ class Welcome3 extends StatelessWidget {
                 width: 190,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const FirstRegisterPage()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: QMainGreen,
                     elevation: 6,
