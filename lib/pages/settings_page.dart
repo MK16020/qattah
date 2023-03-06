@@ -12,7 +12,8 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('الاعدادات', style: TextStyle(color: QBlack)),
+        title: const Text('الاعدادات', style: TextStyle(color: QMainGreen, fontSize: 24)),
+        elevation: 0.5,
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -27,8 +28,8 @@ class SettingsPage extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => const AccountPage()),
               );
             },
-            child: const Row(
-              children: [
+            child: Row(
+              children: const [
                 Expanded(flex: 1, child: AccountImage()),
                 Expanded(
                   flex: 4,

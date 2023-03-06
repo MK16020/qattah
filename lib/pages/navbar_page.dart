@@ -32,8 +32,10 @@ class _NavbarPageState extends State<NavbarPage> {
         },
         currentIndex: currentIndex,
         fixedColor: QMainGreen,
+        unselectedItemColor: QLightGrey,
         selectedIconTheme: const IconThemeData(color: QMainGreen),
-        unselectedIconTheme: const IconThemeData(color: QDarkerGrey),
+        unselectedIconTheme: const IconThemeData(color: QLightGrey),
+        showUnselectedLabels: true,
       ),
     );
   }
