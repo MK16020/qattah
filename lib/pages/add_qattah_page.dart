@@ -69,7 +69,10 @@ class _AddQattahPageState extends State<AddQattahPage> {
                     SizedBox(
                       width: 15,
                     ),
-                    Expanded(child: TextField()),
+                    Expanded(
+                        child: TextField(
+                      decoration: InputDecoration(hintText: 'أدخل وصف', hintStyle: TextStyle(color: QLightGrey)),
+                    )),
                   ],
                 ),
               ),
@@ -85,7 +88,9 @@ class _AddQattahPageState extends State<AddQattahPage> {
                       width: 15,
                     ),
                     Expanded(
-                      child: TextField(),
+                      child: TextField(
+                        decoration: InputDecoration(hintText: 'أدخل المبلغ', hintStyle: TextStyle(color: QLightGrey)),
+                      ),
                     ),
                   ],
                 ),
