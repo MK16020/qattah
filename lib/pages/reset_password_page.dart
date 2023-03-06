@@ -26,7 +26,9 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {Navigator.pop(context);},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(
             Icons.arrow_back_ios,
             color: QDarkerGrey,
@@ -40,24 +42,28 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(24),
-        children: [
-          const SizedBox(height: 50),
-          const QTitle(
-            title: 'أدخل بريدك الإلكتروني وسوف يصلك رابط لإعادة ضبط كلمة المرور',
-          ),
-          const SizedBox(height: 50),
-          QTextField(
-            name: 'البريد الإلكتروني',
-            inputController: emailController,
-            hint: 'ex@gmail.com',
-          ),
-          const SizedBox(height: 50),
-          QButton(
-            title: 'تغيير كلمة المرور ', onPressed: () {  },
-          ),
-        ],
+      body: Directionality(
+        textDirection: TextDirection.rtl,
+        child: ListView(
+          padding: const EdgeInsets.all(24),
+          children: [
+            const SizedBox(height: 50),
+            const QTitle(
+              title: 'أدخل بريدك الإلكتروني وسوف يصلك رابط لإعادة ضبط كلمة المرور',
+            ),
+            const SizedBox(height: 50),
+            QTextField(
+              name: 'البريد الإلكتروني',
+              inputController: emailController,
+              hint: 'ex@gmail.com',
+            ),
+            const SizedBox(height: 50),
+            QButton(
+              title: 'تغيير كلمة المرور ',
+              onPressed: () {},
+            ),
+          ],
+        ),
       ),
     );
   }

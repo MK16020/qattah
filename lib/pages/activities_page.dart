@@ -16,13 +16,27 @@ class ActivitiesPage extends StatelessWidget {
       ),
       body: Directionality(
         textDirection: TextDirection.rtl,
-        child: Padding(
+        child: ListView(
           padding: const EdgeInsets.all(24.0),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 36),
-              child: Text(
-                'ليس هناك أي نشاط في حسابك حتى الآن',
+          children: [
+            Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 36),
+                child: Text(
+                  'ليس هناك أي نشاط في حسابك حتى الآن',
+                  style: TextStyle(
+                    color: QDarkerGrey,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w300,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              const SizedBox(height: 40),
+              Image.asset('assets/images/empty_activities.png'),
+              const SizedBox(height: 100),
+              const Text(
+                'حاول إضافة نشاط!',
                 style: TextStyle(
                   color: QDarkerGrey,
                   fontSize: 24,
@@ -30,20 +44,8 @@ class ActivitiesPage extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-            ),
-            const SizedBox(height: 40),
-            Image.asset('assets/images/empty_activities.png'),
-            const SizedBox(height: 100),
-            const Text(
-              'حاول إضافة نشاط!',
-              style: TextStyle(
-                color: QDarkerGrey,
-                fontSize: 24,
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ]),
+            ]),
+          ],
         ),
       ),
       backgroundColor: Colors.white,

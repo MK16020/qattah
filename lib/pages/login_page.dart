@@ -46,48 +46,51 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(24),
-        children: [
-          const SizedBox(height: 50),
-          const QTitle(
-            title: 'مرحبًا بعودتك',
-          ),
-          const SizedBox(height: 50),
-          QTextField(
-            name: 'البريد الإلكتروني',
-            inputController: emailController,
-            hint: 'ex@gmail.com',
-          ),
-          QTextField(
-            name: 'كلمة المرور',
-            inputController: passwordController,
-            isSecure: true,
-            hint: '• • • • • • • •',
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ResetPasswordPage()),
-              );
-            },
-            child: const Text(
-              'نسيت كلمة المرور ',
-              style: TextStyle(color: QLightGrey, fontSize: 16),
+      body: Directionality(
+        textDirection: TextDirection.rtl,
+        child: ListView(
+          padding: const EdgeInsets.all(24),
+          children: [
+            const SizedBox(height: 50),
+            const QTitle(
+              title: 'مرحبًا بعودتك',
             ),
-          ),
-          const SizedBox(height: 50),
-          QButton(
-            title: 'تسجيل الدخول',
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const NavbarPage()),
-              );
-            },
-          ),
-        ],
+            const SizedBox(height: 50),
+            QTextField(
+              name: 'البريد الإلكتروني',
+              inputController: emailController,
+              hint: 'ex@gmail.com',
+            ),
+            QTextField(
+              name: 'كلمة المرور',
+              inputController: passwordController,
+              isSecure: true,
+              hint: '• • • • • • • •',
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ResetPasswordPage()),
+                );
+              },
+              child: const Text(
+                'نسيت كلمة المرور ',
+                style: TextStyle(color: QLightGrey, fontSize: 16),
+              ),
+            ),
+            const SizedBox(height: 50),
+            QButton(
+              title: 'تسجيل الدخول',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NavbarPage()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
