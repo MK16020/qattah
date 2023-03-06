@@ -9,7 +9,7 @@ class AddMemberPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back_ios, color: QDarkerGrey)),
+        leading: IconButton(onPressed: () {Navigator.pop(context);}, icon: const Icon(Icons.arrow_back_ios, color: QDarkerGrey)),
         title: const Text('اضافة حساب', style: TextStyle(color: QMainGreen, fontSize: 24)),
         actions: [TextButton(onPressed: () {}, child: const Text('حفظ'))],
         elevation: 0.5,

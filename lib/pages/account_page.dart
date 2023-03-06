@@ -13,7 +13,7 @@ class AccountPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('الحساب', style: TextStyle(color: QMainGreen, fontSize: 24)),
         actions: <Widget>[
-          IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_forward_ios, color: QDarkerGrey)),
+          IconButton(onPressed: () {Navigator.pop(context);}, icon: const Icon(Icons.arrow_forward_ios, color: QDarkerGrey)),
         ],
         elevation: 0.5,
         backgroundColor: Colors.white,

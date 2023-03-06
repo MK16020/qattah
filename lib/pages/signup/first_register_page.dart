@@ -33,36 +33,39 @@ class _FirstRegisterPageState extends State<FirstRegisterPage> {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(24),
-        children: [
-          const SizedBox(height: 50),
-          const QTitle(
-            title: 'انشئ حسابك في قَطّة ',
-          ),
-          const SizedBox(height: 50),
-          QTextField(
-            name: 'البريد الإلكتروني',
-            inputController: emailController,
-            hint: 'ex@gmail.com',
-          ),
-          QTextField(
-            name: 'كلمة المرور',
-            inputController: passwordController,
-            isSecure: true,
-            hint: '• • • • • • • •',
-          ),
-          const SizedBox(height: 50),
-          QButton(
-            title: 'التالي',
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SecondRegisterPage()),
-              );
-            },
-          ),
-        ],
+      body: Directionality(
+        textDirection: TextDirection.rtl,
+        child: ListView(
+          padding: const EdgeInsets.all(24),
+          children: [
+            const SizedBox(height: 50),
+            const QTitle(
+              title: 'انشئ حسابك في قَطّة ',
+            ),
+            const SizedBox(height: 50),
+            QTextField(
+              name: 'البريد الإلكتروني',
+              inputController: emailController,
+              hint: 'ex@gmail.com',
+            ),
+            QTextField(
+              name: 'كلمة المرور',
+              inputController: passwordController,
+              isSecure: true,
+              hint: '• • • • • • • •',
+            ),
+            const SizedBox(height: 50),
+            QButton(
+              title: 'التالي',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SecondRegisterPage()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

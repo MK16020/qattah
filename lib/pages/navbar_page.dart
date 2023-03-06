@@ -20,26 +20,29 @@ class _NavbarPageState extends State<NavbarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Directionality(textDirection: TextDirection.rtl, child: pages[currentIndex]),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'الأعضاء'),
-          BottomNavigationBarItem(icon: Icon(Icons.people_alt_outlined), label: 'المجموعات'),
-          BottomNavigationBarItem(icon: Icon(Icons.add_box_rounded), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.insert_chart_outlined_sharp), label: 'النشاط'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: 'الاعدادات'),
-        ],
-        onTap: (newIndex) {
-          currentIndex = newIndex;
-          setState(() {});
-        },
-        currentIndex: currentIndex,
-        elevation: 9,
-        fixedColor: QMainGreen,
-        backgroundColor: Colors.white,
-        unselectedItemColor: QLightGrey,
-        selectedIconTheme: const IconThemeData(color: QMainGreen),
-        unselectedIconTheme: const IconThemeData(color: QLightGrey),
-        showUnselectedLabels: true,
+      bottomNavigationBar: Directionality(
+        textDirection: TextDirection.rtl,
+        child: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'الأعضاء'),
+            BottomNavigationBarItem(icon: Icon(Icons.people_alt_outlined), label: 'المجموعات'),
+            BottomNavigationBarItem(icon: Icon(Icons.add_box_rounded), label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.insert_chart_outlined_sharp), label: 'النشاط'),
+            BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: 'الاعدادات'),
+          ],
+          onTap: (newIndex) {
+            currentIndex = newIndex;
+            setState(() {});
+          },
+          currentIndex: currentIndex,
+          elevation: 9,
+          fixedColor: QMainGreen,
+          backgroundColor: Colors.white,
+          unselectedItemColor: QLightGrey,
+          selectedIconTheme: const IconThemeData(color: QMainGreen),
+          unselectedIconTheme: const IconThemeData(color: QLightGrey),
+          showUnselectedLabels: true,
+        ),
       ),
     );
   }

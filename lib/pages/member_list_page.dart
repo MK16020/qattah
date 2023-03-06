@@ -11,7 +11,9 @@ class MemberListPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(
             Icons.people_outline_outlined,
             color: QMainPink,
