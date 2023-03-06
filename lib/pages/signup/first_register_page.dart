@@ -3,6 +3,7 @@ import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
 import 'package:qattah_project/components/q_title.dart';
 import 'package:qattah_project/constants/qcolors.dart';
+import 'package:qattah_project/pages/signup/second_register_page.dart';
 
 class FirstRegisterPage extends StatefulWidget {
   const FirstRegisterPage({super.key});
@@ -32,30 +33,39 @@ class _FirstRegisterPageState extends State<FirstRegisterPage> {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(24),
-        children: [
-          const SizedBox(height: 50),
-          const QTitle(
-            title: 'انشئ حسابك في قَطّة ',
-          ),
-          const SizedBox(height: 50),
-          QTextField(
-            name: 'البريد الإلكتروني',
-            inputController: emailController,
-            hint: 'ex@gmail.com',
-          ),
-          QTextField(
-            name: 'كلمة المرور',
-            inputController: passwordController,
-            isSecure: true,
-            hint: '• • • • • • • •',
-          ),
-          const SizedBox(height: 50),
-          const QButton(
-            title: 'التالي',
-          ),
-        ],
+      body: Directionality(
+        textDirection: TextDirection.rtl,
+        child: ListView(
+          padding: const EdgeInsets.all(24),
+          children: [
+            const SizedBox(height: 50),
+            const QTitle(
+              title: 'انشئ حسابك في قَطّة ',
+            ),
+            const SizedBox(height: 50),
+            QTextField(
+              name: 'البريد الإلكتروني',
+              inputController: emailController,
+              hint: 'ex@gmail.com',
+            ),
+            QTextField(
+              name: 'كلمة المرور',
+              inputController: passwordController,
+              isSecure: true,
+              hint: '• • • • • • • •',
+            ),
+            const SizedBox(height: 50),
+            QButton(
+              title: 'التالي',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SecondRegisterPage()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

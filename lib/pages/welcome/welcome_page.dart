@@ -37,7 +37,7 @@ class _WelcomePageState extends State<WelcomePage> {
             effect: const ExpandingDotsEffect(
               dotWidth: 12,
               dotHeight: 12,
-              activeDotColor: QMAinPink,
+              activeDotColor: QMainPink,
               dotColor: Colors.white,
             ),
           ),

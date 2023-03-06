@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
+import 'package:qattah_project/pages/navbar_page.dart';
 
 import '../../constants/qcolors.dart';
 
@@ -38,53 +39,62 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(24),
-        children: [
-          const SizedBox(height: 100),
-          QTextField(
-            name: 'الاسم الكامل',
-            inputController: nameController,
-            hint: 'الاسم الكامل',
-          ),
-          QTextField(
-            name: 'رقم الجوال (اختياري)',
-            inputController: passwordController,
-            isSecure: true,
-            hint: ' 0505xxxxxx',
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
-            child: Text(
-              'استخدم عملة الريال السعودي (SAR) كعملتي الاساسية ',
-              style: TextStyle(color: QMainGreen, fontSize: 16),
+      body: Directionality(
+        textDirection: TextDirection.rtl,
+        child: ListView(
+          padding: const EdgeInsets.all(24),
+          children: [
+            const SizedBox(height: 100),
+            QTextField(
+              name: 'الاسم الكامل',
+              inputController: nameController,
+              hint: 'الاسم الكامل',
             ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          InkWell(
-            onTap: () {},
-            child: const Text(
-              'تغيير العملة',
-              style: TextStyle(color: QDarkerGrey, fontSize: 16),
+            QTextField(
+              name: 'رقم الجوال (اختياري)',
+              inputController: passwordController,
+              isSecure: true,
+              hint: ' 0505xxxxxx',
             ),
-          ),
-          const SizedBox(height: 40),
-          const QButton(
-            title: 'تم',
-          ),
-          const SizedBox(height: 60),
-          Center(
-            child: InkWell(
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(
+                'استخدم عملة الريال السعودي (SAR) كعملتي الاساسية ',
+                style: TextStyle(color: QMainGreen, fontSize: 16),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            InkWell(
               onTap: () {},
               child: const Text(
-                'بالتسجيل أنت تقبل بشروط وأحكام قَطّة',
+                'تغيير العملة',
                 style: TextStyle(color: QDarkerGrey, fontSize: 16),
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 40),
+            QButton(
+              title: 'تم',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NavbarPage()),
+                );
+              },
+            ),
+            const SizedBox(height: 60),
+            Center(
+              child: InkWell(
+                onTap: () {},
+                child: const Text(
+                  'بالتسجيل أنت تقبل بشروط وأحكام قَطّة',
+                  style: TextStyle(color: QDarkerGrey, fontSize: 16),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
