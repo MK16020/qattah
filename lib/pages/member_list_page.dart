@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../components/member_card.dart';
 import '../constants/qcolors.dart';
 
 class MemberListPage extends StatelessWidget {
@@ -33,7 +34,15 @@ class MemberListPage extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: ListView(children: const []),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          for (int i = 0; i < 4; i++) ...[
+            const MemberCard(),
+            const SizedBox(height: 10),
+          ],
+        ],
+      ),
     );
   }
 }

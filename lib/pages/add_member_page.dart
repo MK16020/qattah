@@ -19,14 +19,15 @@ class AddMemberPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          Row(
+          const Row(
             children: [
               Expanded(
-                  flex: 1,
-                  child: Text(
-                    'أنت و: \t',
-                    style: TextStyle(color: QMainGreen),
-                  )),
+                flex: 1,
+                child: Text(
+                  'أنت و: \t',
+                  style: TextStyle(color: QMainGreen),
+                ),
+              ),
               Expanded(
                 flex: 6,
                 child: TextField(
@@ -49,7 +50,7 @@ class AddMemberPage extends StatelessWidget {
             ),
           const Text('من جهات الإتصال الخاصة بك:', style: TextStyle(color: QMainGreen)),
           for (int i = 0; i < 4; i++) ...[
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
