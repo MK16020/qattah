@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qattah_project/pages/account_page.dart';
-import 'package:qattah_project/pages/navbar_page.dart';
-import 'package:qattah_project/pages/add_member_page.dart';
+import 'package:qattah_project/pages/add_group_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -12,7 +10,7 @@ class App extends StatelessWidget {
       home: const Scaffold(
         body: Directionality(
           textDirection: TextDirection.rtl,
-          child: NavbarPage(),
+          child: AddGroupPage(),
         ),
       ),
       // home: const AddMemberPage(),

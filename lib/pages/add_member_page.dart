@@ -14,9 +14,8 @@ class AddMemberPage extends StatelessWidget {
             fontSize: 32,
           ),
         ),
-        actions: const [
-          Padding(padding: EdgeInsets.all(8.0), child: Icon(Icons.arrow_forward_ios, color: Color(0XFF33523E))),
-        ],
+        leading:
+            const Padding(padding: EdgeInsets.all(8.0), child: Icon(Icons.arrow_back_ios, color: Color(0XFF33523E))),
         elevation: 0.5,
         backgroundColor: Colors.white,
       ),
@@ -25,7 +24,7 @@ class AddMemberPage extends StatelessWidget {
         child: SizedBox(
           width: double.infinity,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
                 height: 12,
