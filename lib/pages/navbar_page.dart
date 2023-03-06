@@ -5,6 +5,7 @@ import 'package:qattah_project/pages/add_qattah_page.dart';
 import 'package:qattah_project/pages/groups_page.dart';
 import 'package:qattah_project/pages/members_page.dart';
 import 'package:qattah_project/pages/settings_page.dart';
+import 'package:qattah_project/pages/temp.dart';
 
 class NavbarPage extends StatefulWidget {
   const NavbarPage({super.key});
@@ -17,7 +18,7 @@ class _NavbarPageState extends State<NavbarPage> {
   final pages = [
     const MembersPage(),
     const GroupsPage(),
-    AddQattahPage(),
+    const Temp(),
     const ActivitiesPage(),
     const SettingsPage()
   ];
