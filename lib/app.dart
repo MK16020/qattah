@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qattah_project/pages/account_page.dart';
 import 'package:qattah_project/pages/navbar_page.dart';
 
 class App extends StatelessWidget {
