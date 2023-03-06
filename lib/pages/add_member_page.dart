@@ -16,6 +16,8 @@ class AddMemberPage extends StatelessWidget {
           },
           icon: const Icon(Icons.arrow_back_ios, color: QDarkerGrey),
         ),
+        leading:
+            const Padding(padding: EdgeInsets.all(8.0), child: Icon(Icons.arrow_back_ios, color: Color(0XFF33523E))),
         title: const Text('اضافة حساب', style: TextStyle(color: QMainGreen, fontSize: 24)),
         actions: [
           TextButton(
@@ -35,16 +37,31 @@ class AddMemberPage extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(20),
-        children: [
-          Row(
-            children: const [
-              Expanded(
-                flex: 1,
-                child: Text(
-                  'أنت و: \t',
-                  style: TextStyle(color: QMainGreen),
+
+      body: Padding(
+        padding: const EdgeInsets.all(36.0),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 12,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(12.0),
+                child: Text('الاسم',
+                    style: TextStyle(color: Color(0XFF33523E), fontSize: 16), textAlign: TextAlign.center),
+              ),
+              const TextField(
+                decoration: InputDecoration(
+                  hintText: '...اسم',
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue), borderRadius: BorderRadius.all(Radius.circular(10))),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey), borderRadius: BorderRadius.all(Radius.circular(10))),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
+
                 ),
               ),
               Expanded(
