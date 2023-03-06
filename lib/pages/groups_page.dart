@@ -41,9 +41,9 @@ class GroupsPage extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                 padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
               ),
-              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: const [
-                Text('إبدأ مجموعة', style: TextStyle(color: QMAinPink, fontSize: 20)),
-                Icon(Icons.group_add_outlined, color: QMAinPink),
+              child: const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Text('إبدأ مجموعة', style: TextStyle(color: QMainPink, fontSize: 20)),
+                Icon(Icons.group_add_outlined, color: QMainPink),
               ]),
             ),
           ),

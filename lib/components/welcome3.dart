@@ -50,7 +50,7 @@ class Welcome3 extends StatelessWidget {
                     shadowColor: QDarkerGrey,
                     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
                   ),
-                  child: const Text('تسجيل الدخول', style: TextStyle(color: QMAinPink, fontSize: 20)),
+                  child: const Text('تسجيل الدخول', style: TextStyle(color: QMainPink, fontSize: 20)),
                 ),
               ),
             ),

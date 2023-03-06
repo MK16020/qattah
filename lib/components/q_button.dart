@@ -11,7 +11,7 @@ class QButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
-          backgroundColor: QMAinPink,
+          backgroundColor: QMainPink,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
         ),

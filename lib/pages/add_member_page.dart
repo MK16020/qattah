@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/qcolors.dart';
+
 class AddMemberPage extends StatelessWidget {
   const AddMemberPage({super.key});
 
@@ -7,109 +9,74 @@ class AddMemberPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'إضافة عضو جديد',
-          style: TextStyle(
-            color: Color(0XFF33523E),
-            fontSize: 32,
-          ),
-        ),
-        actions: const [
-          Padding(padding: EdgeInsets.all(8.0), child: Icon(Icons.arrow_forward_ios, color: Color(0XFF33523E))),
-        ],
+        leading: IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back_ios, color: QDarkerGrey)),
+        title: const Text('اضافة حساب', style: TextStyle(color: QMainGreen, fontSize: 24)),
+        actions: [TextButton(onPressed: () {}, child: const Text('حفظ'))],
         elevation: 0.5,
         backgroundColor: Colors.white,
+        centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(36.0),
-        child: SizedBox(
-          width: double.infinity,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+      body: ListView(
+        padding: const EdgeInsets.all(20),
+        children: [
+          const Row(
             children: [
-              const SizedBox(
-                height: 12,
-              ),
-              const Padding(
-                padding: EdgeInsets.all(12.0),
-                child: Text('الاسم',
-                    style: TextStyle(color: Color(0XFF33523E), fontSize: 16), textAlign: TextAlign.center),
-              ),
-              const TextField(
-                decoration: InputDecoration(
-                  hintText: '...اسم',
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blue), borderRadius: BorderRadius.all(Radius.circular(10))),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey), borderRadius: BorderRadius.all(Radius.circular(10))),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
-                ),
-                textAlign: TextAlign.right,
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              const Padding(
-                padding: EdgeInsets.all(12.0),
-                child: Text('رقم الجوال',
-                    style: TextStyle(color: Color(0XFF33523E), fontSize: 16), textAlign: TextAlign.center),
-              ),
-              const TextField(
-                decoration: InputDecoration(
-                  hintText: '05xxxxxxx',
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blue), borderRadius: BorderRadius.all(Radius.circular(10))),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey), borderRadius: BorderRadius.all(Radius.circular(10))),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
-                ),
-                textAlign: TextAlign.right,
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              const Text(
-                'أو',
-                style: TextStyle(color: Color(0XFF939393), fontSize: 24),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(12.0),
-                child: Text('البريد الإلكتروني',
-                    style: TextStyle(color: Color(0XFF33523E), fontSize: 16), textAlign: TextAlign.center),
-              ),
-              const TextField(
-                decoration: InputDecoration(
-                  hintText: 'Ex@gmail.com',
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blue), borderRadius: BorderRadius.all(Radius.circular(10))),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey), borderRadius: BorderRadius.all(Radius.circular(10))),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
-                ),
-                textAlign: TextAlign.right,
-              ),
-              const SizedBox(
-                height: 100,
-              ),
-              Center(
-                child: SizedBox(
-                  width: 180,
-                  height: 56,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0XFF33523E),
-                      elevation: 5,
-                      shadowColor: const Color.fromARGB(255, 114, 114, 114),
-                      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
-                    ),
-                    child: const Text('إضافة', style: TextStyle(color: Colors.white, fontSize: 20)),
-                  ),
+              Expanded(
+                  flex: 1,
+                  child: Text(
+                    'أنت و: \t',
+                    style: TextStyle(color: QMainGreen),
+                  )),
+              Expanded(
+                flex: 6,
+                child: TextField(
+                  decoration:
+                      InputDecoration(hintText: 'ادخل اسم، بريد إلكتروني، أو رقم جوال', border: InputBorder.none),
                 ),
               ),
             ],
           ),
-        ),
+          const Text('أعضاء في قطة:', style: TextStyle(color: QMainGreen)),
+          for (int i = 0; i < 4; i++)
+            const ListTile(
+              leading: CircleAvatar(foregroundImage: AssetImage('images/profile.png')),
+              title: Text('ريما خالد'),
+              trailing: Icon(
+                Icons.circle_outlined,
+                color: QLightGrey,
+              ),
+              contentPadding: EdgeInsets.all(10),
+            ),
+          const Text('من جهات الإتصال الخاصة بك:', style: TextStyle(color: QMainGreen)),
+          for (int i = 0; i < 4; i++) ...[
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'محمد',
+                      style: TextStyle(color: QMainPink),
+                    ),
+                    Text(
+                      '05837838928',
+                      style: TextStyle(color: QDarkerGrey),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Icon(
+                    Icons.circle_outlined,
+                    color: QLightGrey,
+                  ),
+                ),
+              ],
+            ),
+            const Divider(),
+          ],
+        ],
       ),
     );
   }
