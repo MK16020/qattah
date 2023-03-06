@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
 import 'package:qattah_project/components/q_title.dart';
+import 'package:qattah_project/pages/reset_password_page.dart';
 
 import '../constants/qcolors.dart';
 
@@ -62,7 +63,12 @@ class _LoginPageState extends State<LoginPage> {
             hint: '• • • • • • • •',
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ResetPasswordPage()),
+              );
+            },
             child: const Text(
               'نسيت كلمة المرور ',
               style: TextStyle(color: QLightGrey, fontSize: 16),
