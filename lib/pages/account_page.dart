@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/constants/qcolors.dart';
 
+import '../components/account_image.dart';
 import '../components/q_account_option.dart';
 
 class AccountPage extends StatelessWidget {
@@ -28,16 +29,7 @@ class AccountPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(image: AssetImage('images/profile.png')),
-              borderRadius: BorderRadius.all(
-                Radius.circular(60),
-              ),
-            ),
-            height: 130,
-            clipBehavior: Clip.hardEdge,
-          ),
+          const AccountImage(),
           const SizedBox(height: 30),
           Container(
             decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: QLightGrey))),

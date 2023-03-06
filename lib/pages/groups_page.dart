@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ActivitiesPage extends StatelessWidget {
-  const ActivitiesPage({super.key});
+class GroupsPage extends StatelessWidget {
+  const GroupsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('صفحة الأنشطة'),
+        child: Text('صفحة المجموعات'),
       ),
     );
   }
