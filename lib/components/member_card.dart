@@ -14,25 +14,25 @@ class MemberCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(8),
         decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: QLightGrey))),
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            CircleAvatar(
-              backgroundImage: AssetImage('images/profile.png'),
+            const CircleAvatar(
+              backgroundImage: AssetImage('assets/images/profile.png'),
               radius: 20,
             ),
-            SizedBox(width: 10),
-            Expanded(flex: 2, child: Text('ريناد')),
+            const SizedBox(width: 10),
+            const Expanded(flex: 2, child: Text('رناد')),
             Expanded(
               flex: 2,
               child: Column(
-                children: [
+                children: const [
                   Text('يدين لك: '),
-                  Text('50,00 SAR'),
+                  Text('50.00 SAR'),
                 ],
               ),
             ),
-            Icon(Icons.keyboard_arrow_left_outlined),
+            const Icon(Icons.keyboard_arrow_left_outlined),
           ],
         ),
       ),

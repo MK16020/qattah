@@ -10,9 +10,27 @@ class AddMemberPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: TextButton(onPressed: () {}, child: const Text('حفظ')),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios, color: QDarkerGrey),
+        ),
         title: const Text('اضافة حساب', style: TextStyle(color: QMainGreen, fontSize: 24)),
-        actions: [TextButton(onPressed: () {}, child: const Text('حفظ'))],
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddQattahPage()),
+              );
+            },
+            child: const Text(
+              'حفظ',
+              style: TextStyle(color: QDarkerGrey),
+            ),
+          ),
+        ],
         elevation: 0.5,
         backgroundColor: Colors.white,
         centerTitle: true,
@@ -21,13 +39,14 @@ class AddMemberPage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         children: [
           Row(
-            children: [
+            children: const [
               Expanded(
-                  flex: 1,
-                  child: Text(
-                    'أنت و: \t',
-                    style: TextStyle(color: QMainGreen),
-                  )),
+                flex: 1,
+                child: Text(
+                  'أنت و: \t',
+                  style: TextStyle(color: QMainGreen),
+                ),
+              ),
               Expanded(
                 flex: 6,
                 child: TextField(
@@ -55,7 +74,7 @@ class AddMemberPage extends StatelessWidget {
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
                     Text(
                       'محمد',
                       style: TextStyle(color: QMainPink),
@@ -66,7 +85,7 @@ class AddMemberPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Icon(
                     Icons.circle_outlined,
