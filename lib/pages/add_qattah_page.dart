@@ -70,9 +70,10 @@ class _AddQattahPageState extends State<AddQattahPage> {
                       width: 15,
                     ),
                     Expanded(
-                        child: TextField(
-                      decoration: InputDecoration(hintText: 'أدخل وصف', hintStyle: TextStyle(color: QLightGrey)),
-                    )),
+                      child: TextField(
+                        decoration: InputDecoration(hintText: 'أدخل وصف', hintStyle: TextStyle(color: QLightGrey)),
+                      ),
+                    ),
                   ],
                 ),
               ),
