@@ -19,7 +19,7 @@ class AddMemberPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          const Row(
+          Row(
             children: [
               Expanded(
                   flex: 1,
@@ -49,7 +49,7 @@ class AddMemberPage extends StatelessWidget {
             ),
           const Text('من جهات الإتصال الخاصة بك:', style: TextStyle(color: QMainGreen)),
           for (int i = 0; i < 4; i++) ...[
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
