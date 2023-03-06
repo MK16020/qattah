@@ -43,10 +43,19 @@ class SettingsPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 80),
-          const QAccountOption(icon: Icon(Icons.person_outline), title: 'تغيير اسم المستخدم'),
-          const QAccountOption(icon: Icon(Icons.mail_outline), title: 'تغيير البريد الإلكتروني'),
-          const QAccountOption(icon: Icon(Icons.vpn_key_outlined), title: 'تغيير كلمة المرور'),
-          const QAccountOption(icon: Icon(Icons.person_off_outlined), title: 'حذف الحساب'),
+          const QAccountOption(icon: Icon(Icons.notifications_on_outlined), title: 'الإشعارات'),
+          const QAccountOption(icon: Icon(Icons.remove_red_eye_outlined), title: 'سياسة الخصوصية'),
+          const QAccountOption(icon: Icon(Icons.phone_enabled_outlined), title: 'تواصل معنا'),
+          const SizedBox(
+            height: 50,
+          ),
+          TextButton(
+            onPressed: () {},
+            child: const Text(
+              'تسجيل الخروج',
+              style: TextStyle(color: QLightestGreen),
+            ),
+          ),
         ],
       ),
     );

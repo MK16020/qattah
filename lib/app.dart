@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:qattah_project/pages/account_page.dart';
 import 'package:qattah_project/pages/navbar_page.dart';
 import 'package:qattah_project/pages/add_member_page.dart';
 

@@ -9,7 +9,7 @@ class AccountImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage('images/profile.png')),
+        image: DecorationImage(image: AssetImage('assets/images/profile.png')),
         borderRadius: BorderRadius.all(
           Radius.circular(60),
         ),

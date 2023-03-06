@@ -31,7 +31,9 @@ class _NavbarPageState extends State<NavbarPage> {
           setState(() {});
         },
         currentIndex: currentIndex,
+        elevation: 9,
         fixedColor: QMainGreen,
+        backgroundColor: Colors.white,
         unselectedItemColor: QLightGrey,
         selectedIconTheme: const IconThemeData(color: QMainGreen),
         unselectedIconTheme: const IconThemeData(color: QLightGrey),
