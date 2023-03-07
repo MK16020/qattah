@@ -9,9 +9,11 @@ class QTextField extends StatelessWidget {
     this.isSecure,
     this.formIcon,
     required this.hint,
+    this.isOptional,
   });
   final String name, hint;
   final bool? isSecure;
+  final bool? isOptional;
   final Icon? formIcon;
   final TextEditingController inputController;
 
@@ -43,6 +45,16 @@ class QTextField extends StatelessWidget {
                     )
                   : InputDecoration(icon: formIcon, hintText: hint, border: InputBorder.none),
               obscureText: isSecure == null ? false : true,
+              validator: (value) {
+                if (isOptional == null ? true : false) {
+                  if (value!.isEmpty) {
+                    return ' هذا الحقل إجباري';
+                  }
+                  return null;
+                }
+                return null;
+              },
+              autovalidateMode: AutovalidateMode.onUserInteraction,
             ),
           ),
         ),

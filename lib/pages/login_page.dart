@@ -47,8 +47,9 @@ class _LoginPageState extends State<LoginPage> {
           errorMessage = 'المستخدم الذي تدخله ليس لديه صلاحيات الدخول';
           break;
         default:
-          errorMessage = 'حصل خطأ غير متوقع. حاول في وقت لاحق';
+          errorMessage = 'خطأ في البريد الإلكتروني أو كلمة السر';
       }
+      setState(() {});
     }
     if (errorMessage.isNotEmpty) {
       return Future.error(errorMessage);
@@ -95,11 +96,13 @@ class _LoginPageState extends State<LoginPage> {
               title: 'مرحبًا بعودتك',
             ),
             const SizedBox(height: 50),
-            Text(
-              errorMessage,
-              style: const TextStyle(color: QRed),
-            ),
-            const SizedBox(height: 12),
+            if (errorMessage.isNotEmpty) ...[
+              Text(
+                errorMessage,
+                style: const TextStyle(color: QRed),
+              ),
+              const SizedBox(height: 12),
+            ],
             QTextField(
               name: 'البريد الإلكتروني',
               inputController: emailController,

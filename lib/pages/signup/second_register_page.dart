@@ -1,12 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
-import 'package:qattah_project/pages/navbar_page.dart';
 
 import '../../constants/qcolors.dart';
 
 class SecondRegisterPage extends StatefulWidget {
-  const SecondRegisterPage({super.key});
+  const SecondRegisterPage({super.key, required this.email, required this.password});
+  final String email;
+  final String password;
 
   @override
   State<SecondRegisterPage> createState() => _SecondRegisterPageState();
@@ -53,8 +55,8 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
             QTextField(
               name: 'رقم الجوال (اختياري)',
               inputController: passwordController,
-              isSecure: true,
               hint: ' 0505xxxxxx',
+              isOptional: true,
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -77,10 +79,8 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
             QButton(
               title: 'تم',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const NavbarPage()),
-                );
+                FirebaseAuth.instance.createUserWithEmailAndPassword(email: widget.email, password: widget.password);
+                setState(() {});
               },
             ),
             const SizedBox(height: 60),

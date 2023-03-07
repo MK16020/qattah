@@ -16,6 +16,25 @@ class _FirstRegisterPageState extends State<FirstRegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  String errorMessage = '';
+
+  void isValid() {
+    if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => SecondRegisterPage(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim(),
+          ),
+        ),
+      );
+    } else {
+      errorMessage = 'يرجى تعبئة الحقول';
+      setState(() {});
+    }
+  }
+
   @override
   void dispose() {
     emailController.dispose();
@@ -43,6 +62,13 @@ class _FirstRegisterPageState extends State<FirstRegisterPage> {
               title: 'انشئ حسابك في قَطّة ',
             ),
             const SizedBox(height: 50),
+            if (errorMessage.isNotEmpty) ...[
+              Text(
+                errorMessage,
+                style: const TextStyle(color: QRed),
+              ),
+              const SizedBox(height: 12),
+            ],
             QTextField(
               name: 'البريد الإلكتروني',
               inputController: emailController,
@@ -57,12 +83,7 @@ class _FirstRegisterPageState extends State<FirstRegisterPage> {
             const SizedBox(height: 50),
             QButton(
               title: 'التالي',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SecondRegisterPage()),
-                );
-              },
+              onPressed: isValid,
             ),
           ],
         ),

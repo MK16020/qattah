@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/pages/account_page.dart';
 
@@ -30,16 +31,9 @@ class SettingsPage extends StatelessWidget {
                 );
               },
               child: Row(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: QLightGrey,
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    child: const Placeholder(fallbackWidth: 120, fallbackHeight: 130),
-                    // child: Image.file(imageFile!, width: 120, height: 130, fit: BoxFit.cover),
-                  ),
-                  const Expanded(
+                children: const [
+                  Expanded(flex: 1, child: AccountImage()),
+                  Expanded(
                     flex: 4,
                     child: ListTile(
                       title: Text('نورة '),
@@ -58,7 +52,9 @@ class SettingsPage extends StatelessWidget {
               height: 50,
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+              },
               child: const Text(
                 'تسجيل الخروج',
                 style: TextStyle(color: QLightestGreen),
