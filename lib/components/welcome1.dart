@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class Welcome1 extends StatelessWidget {
   const Welcome1({super.key});
@@ -24,6 +25,13 @@ class Welcome1 extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 40.0),
               textAlign: TextAlign.center,
             ),
+          ),
+          Positioned(
+            left: 10,
+            top: 10,
+            right: 10,
+            bottom: 230,
+            child: Lottie.network('https://assets10.lottiefiles.com/packages/lf20_c2foaV4x9x.json'),
           ),
           const Positioned(
             left: 180,
