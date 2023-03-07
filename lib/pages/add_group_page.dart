@@ -53,7 +53,7 @@ class AddGroupPage extends StatelessWidget {
                           child: Icon(
                             Icons.camera_enhance_outlined,
                             size: 48,
-                            color: QMAinPink,
+                            color: QMainPink,
                           ),
                         ),
                       ),
