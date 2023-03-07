@@ -1,8 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
 import 'package:qattah_project/components/q_title.dart';
-import 'package:qattah_project/pages/navbar_page.dart';
 import 'package:qattah_project/pages/reset_password_page.dart';
 
 import '../constants/qcolors.dart';
@@ -17,6 +17,45 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  String errorMessage = '';
+  Future signIn() async {
+    User? user;
+    try {
+      UserCredential result = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      user = result.user;
+    } catch (error) {
+      switch (error.toString()) {
+        case 'ERROR_INVALID_EMAIL':
+          errorMessage = 'خطأ في البريد الإلكتروني أو كلمة السر';
+          break;
+        case 'ERROR_WRONG_PASSWORD':
+          errorMessage = 'خطأ في البريد الإلكتروني أو كلمة السر';
+          break;
+        case 'ERROR_USER_NOT_FOUND':
+          errorMessage = 'المستخدم غير موجود';
+          break;
+        case 'ERROR_USER_DISABLED':
+          errorMessage = 'المستخدم الذي تحاول الوصول له تم ايقافه';
+          break;
+        case 'ERROR_TOO_MANY_REQUESTS':
+          errorMessage = 'لقد حصل خطأ حاول مرة أخرى في وقت لاحق';
+          break;
+        case 'ERROR_OPERATION_NOT_ALLOWED':
+          errorMessage = 'المستخدم الذي تدخله ليس لديه صلاحيات الدخول';
+          break;
+        default:
+          errorMessage = 'حصل خطأ غير متوقع. حاول في وقت لاحق';
+      }
+    }
+    if (errorMessage.isNotEmpty) {
+      return Future.error(errorMessage);
+    }
+
+    return user!.uid;
+  }
 
   @override
   void dispose() {
@@ -56,6 +95,11 @@ class _LoginPageState extends State<LoginPage> {
               title: 'مرحبًا بعودتك',
             ),
             const SizedBox(height: 50),
+            Text(
+              errorMessage,
+              style: const TextStyle(color: QRed),
+            ),
+            const SizedBox(height: 12),
             QTextField(
               name: 'البريد الإلكتروني',
               inputController: emailController,
@@ -83,10 +127,8 @@ class _LoginPageState extends State<LoginPage> {
             QButton(
               title: 'تسجيل الدخول',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const NavbarPage()),
-                );
+                signIn();
+                setState(() {});
               },
             ),
           ],
