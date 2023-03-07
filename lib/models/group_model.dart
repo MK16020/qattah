@@ -1,15 +1,15 @@
-class UserModel {
+class GroupModel {
   String id, name, imageUrl;
   String? phone;
 
-  UserModel({
+  GroupModel({
     required this.id,
     required this.name,
     this.phone,
     required this.imageUrl,
   });
-  factory UserModel.fromMap(Map<String, dynamic> map) {
-    return UserModel(
+  factory GroupModel.fromMap(Map<String, dynamic> map) {
+    return GroupModel(
       id: map['id'],
       name: map['name'],
       phone: map['phone'],

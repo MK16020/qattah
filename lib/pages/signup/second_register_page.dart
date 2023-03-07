@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
+import 'package:qattah_project/pages/navbar_page.dart';
 
 import '../../constants/qcolors.dart';
 
@@ -17,6 +18,8 @@ class SecondRegisterPage extends StatefulWidget {
 class _SecondRegisterPageState extends State<SecondRegisterPage> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  createUser() {}
 
   @override
   void dispose() {
@@ -80,6 +83,13 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
               title: 'تم',
               onPressed: () {
                 FirebaseAuth.instance.createUserWithEmailAndPassword(email: widget.email, password: widget.password);
+                if (FirebaseAuth.instance.currentUser != null) {
+                  print(FirebaseAuth.instance.currentUser?.uid);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const NavbarPage()),
+                  );
+                }
                 setState(() {});
               },
             ),
