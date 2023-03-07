@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/qcolors.dart';
+import '../../constants/qcolors.dart';
 
 class AddActivityPage extends StatelessWidget {
   const AddActivityPage({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qattah_project/pages/add_qattah_page.dart';
+import 'package:qattah_project/pages/activity/add_qattah_page.dart';
 
-import '../constants/qcolors.dart';
+import '../../constants/qcolors.dart';
 
 class AddMemberPage extends StatelessWidget {
   const AddMemberPage({super.key});

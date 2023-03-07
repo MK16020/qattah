@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../components/member_card.dart';
-import '../constants/qcolors.dart';
+import '../../components/member_card.dart';
+import '../../constants/qcolors.dart';
 
 class MemberListPage extends StatelessWidget {
   const MemberListPage({super.key});

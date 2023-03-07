@@ -81,8 +81,9 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
             const SizedBox(height: 40),
             QButton(
               title: 'تم',
-              onPressed: () {
-                FirebaseAuth.instance.createUserWithEmailAndPassword(email: widget.email, password: widget.password);
+              onPressed: () async {
+                await FirebaseAuth.instance
+                    .createUserWithEmailAndPassword(email: widget.email, password: widget.password);
                 if (FirebaseAuth.instance.currentUser != null) {
                   print(FirebaseAuth.instance.currentUser?.uid);
                   Navigator.push(

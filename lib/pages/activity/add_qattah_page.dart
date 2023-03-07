@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/qcolors.dart';
+import '../../constants/qcolors.dart';
 
 class AddQattahPage extends StatefulWidget {
   const AddQattahPage({super.key});

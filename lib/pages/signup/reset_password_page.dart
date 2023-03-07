@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../components/q_button.dart';
-import '../components/q_text_field.dart';
-import '../components/q_title.dart';
-import '../constants/qcolors.dart';
+import '../../components/q_button.dart';
+import '../../components/q_text_field.dart';
+import '../../components/q_title.dart';
+import '../../constants/qcolors.dart';
 
 class ResetPasswordPage extends StatefulWidget {
   const ResetPasswordPage({super.key});

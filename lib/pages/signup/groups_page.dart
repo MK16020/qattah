@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qattah_project/pages/add_group_page.dart';
+import 'package:qattah_project/pages/group/add_group_page.dart';
 
-import '../constants/qcolors.dart';
+import '../../constants/qcolors.dart';
 
 class GroupsPage extends StatelessWidget {
   const GroupsPage({super.key});

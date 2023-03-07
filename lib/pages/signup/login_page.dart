@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
 import 'package:qattah_project/components/q_title.dart';
-import 'package:qattah_project/pages/reset_password_page.dart';
+import 'package:qattah_project/pages/signup/reset_password_page.dart';
 
-import '../constants/qcolors.dart';
+import '../../constants/qcolors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/constants/qcolors.dart';
-import 'package:qattah_project/pages/login_page.dart';
+import 'package:qattah_project/pages/signup/login_page.dart';
 import 'package:qattah_project/pages/signup/first_register_page.dart';
 
 class Welcome3 extends StatelessWidget {
