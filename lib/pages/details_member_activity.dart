@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qattah_project/constants/qcolors.dart';
 
 class DetailsMemberActivity extends StatelessWidget {
   const DetailsMemberActivity({super.key});
@@ -16,7 +17,7 @@ class DetailsMemberActivity extends StatelessWidget {
                 ),
               ),
               const Positioned(left: 20, top: 80, child: Icon(Icons.settings_outlined, size: 28)),
-              const Positioned(left: 388, top: 80, child: Icon(Icons.arrow_forward_ios, size: 28)),
+              const Positioned(left: 388, top: 80, child: Icon(Icons.arrow_back_ios, size: 28)),
               Positioned(
                 left: 300,
                 top: 212,
@@ -37,7 +38,7 @@ class DetailsMemberActivity extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               Text(
-                'اسم العضو',
+                'مريم',
                 style: TextStyle(fontSize: 32),
               ),
             ],
@@ -46,8 +47,12 @@ class DetailsMemberActivity extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               Text(
-                'العضو....',
+                'انت تطلب مريم ',
                 style: TextStyle(fontSize: 16),
+              ),
+              Text(
+                '25 SAR',
+                style: TextStyle(fontSize: 16, color: QMainGreen),
               ),
             ],
           ),
@@ -72,11 +77,12 @@ class DetailsMemberActivity extends StatelessWidget {
                 ),
                 width: 120.0,
                 height: 48.0,
-                child: const Center(child: Text('تذكير..', style: TextStyle(fontSize: 16.0, color: Colors.white))),
+                child:
+                    const Center(child: Text('التسوية المالية', style: TextStyle(fontSize: 16.0, color: Colors.white))),
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                   boxShadow: [
                     BoxShadow(
@@ -89,10 +95,103 @@ class DetailsMemberActivity extends StatelessWidget {
                 ),
                 width: 120.0,
                 height: 48.0,
-                child:
-                    const Center(child: Text('التسوية المالية', style: TextStyle(fontSize: 16.0, color: Colors.white))),
+                child: const Center(child: Text('تذكير..', style: TextStyle(fontSize: 16.0, color: Colors.black))),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      offset: const Offset(0, 3),
+                      blurRadius: 7,
+                      spreadRadius: 1,
+                    ),
+                  ],
+                ),
+                width: 120.0,
+                height: 48.0,
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text('رسوم بيانية', style: TextStyle(color: Colors.black, fontSize: 16.0)),
+                      Icon(Icons.draw_outlined),
+                    ],
+                  ),
+                ),
               ),
             ],
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Row(
+              children: const [
+                Text(
+                  'مارس ٢٠٢٣',
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: Row(
+              children: [
+                const Text(
+                  'مارس - ٧',
+                  style: TextStyle(color: Color.fromARGB(255, 136, 136, 136)),
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 188, 188, 188),
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  ),
+                  width: 72,
+                  height: 72,
+                  child: const Icon(Icons.wallet, size: 60, color: Colors.white),
+                ),
+                const SizedBox(
+                  width: 16,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'تجربة',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    Text(
+                      'انت دفعت 50.00 SAR',
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  width: 32,
+                ),
+                Column(
+                  //crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'تطلبه',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    Text(
+                      '25.00 SAR',
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),

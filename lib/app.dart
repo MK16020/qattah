@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:qattah_project/pages/welcome/welcome_page.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
 
+import 'pages/details_member_activity.dart';
+
 class App extends StatefulWidget {
   const App({super.key});
 
@@ -19,7 +21,7 @@ class _AppState extends State<App> {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             return snapshot.hasData
-                ? const Scaffold(body: Directionality(textDirection: TextDirection.rtl, child: WelcomePage()))
+                ? const Scaffold(body: Directionality(textDirection: TextDirection.rtl, child: DetailsMemberActivity()))
                 : const WelcomePage();
           },
         ),
