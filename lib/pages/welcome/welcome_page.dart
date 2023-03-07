@@ -17,32 +17,35 @@ class _WelcomePageState extends State<WelcomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        PageView(
-          controller: _controller,
-          children: const [
-            Welcome1(),
-            Welcome2(),
-            Welcome3(),
-          ],
-        ),
-        Positioned(
-          left: 176,
-          right: 176,
-          bottom: 100,
-          child: SmoothPageIndicator(
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Stack(
+        children: [
+          PageView(
             controller: _controller,
-            count: 3,
-            effect: const ExpandingDotsEffect(
-              dotWidth: 12,
-              dotHeight: 12,
-              activeDotColor: QMainPink,
-              dotColor: Colors.white,
+            children: const [
+              Welcome1(),
+              Welcome2(),
+              Welcome3(),
+            ],
+          ),
+          Positioned(
+            left: 176,
+            right: 176,
+            bottom: 100,
+            child: SmoothPageIndicator(
+              controller: _controller,
+              count: 3,
+              effect: const ExpandingDotsEffect(
+                dotWidth: 12,
+                dotHeight: 12,
+                activeDotColor: QMainPink,
+                dotColor: Colors.white,
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
