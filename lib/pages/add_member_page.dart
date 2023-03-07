@@ -35,14 +35,14 @@ class AddMemberPage extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(36.0),
+      body: Padding(
+        padding: const EdgeInsets.all(36.0),
         child: SizedBox(
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
               Padding(

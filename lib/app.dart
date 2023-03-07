@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:qattah_project/pages/add_group_page.dart';
+import 'package:qattah_project/pages/welcome/welcome_page.dart';
 
 import 'pages/login_page.dart';
 
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
           return snapshot.hasData ? const Scaffold(
         body: Directionality(
           textDirection: TextDirection.rtl,
-          child: AddGroupPage(),
+          child: WelcomePage(),
         ),
       ) : const LoginPage();
         },
