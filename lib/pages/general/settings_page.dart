@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:qattah_project/pages/account_page.dart';
+import 'package:qattah_project/pages/general/account_page.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
 
-import '../components/q_account_option.dart';
-import '../constants/qcolors.dart';
+import '../../components/q_account_option.dart';
+import '../../constants/qcolors.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});

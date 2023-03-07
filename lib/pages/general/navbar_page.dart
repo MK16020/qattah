@@ -3,8 +3,8 @@ import 'package:qattah_project/constants/qcolors.dart';
 import 'package:qattah_project/pages/activity/activities_page.dart';
 import 'package:qattah_project/pages/signup/groups_page.dart';
 import 'package:qattah_project/pages/member/members_page.dart';
-import 'package:qattah_project/pages/settings_page.dart';
-import 'package:qattah_project/pages/temp.dart';
+import 'package:qattah_project/pages/general/settings_page.dart';
+import 'package:qattah_project/pages/member/temp.dart';
 
 class NavbarPage extends StatefulWidget {
   const NavbarPage({super.key});

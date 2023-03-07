@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/constants/qcolors.dart';
 
-import '../components/account_image.dart';
-import '../components/q_account_option.dart';
+import '../../components/account_image.dart';
+import '../../components/q_account_option.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});

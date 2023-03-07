@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
-import 'package:qattah_project/pages/navbar_page.dart';
+import 'package:qattah_project/pages/general/navbar_page.dart';
 
 import '../../constants/qcolors.dart';
 

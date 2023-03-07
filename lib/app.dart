@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:qattah_project/pages/navbar_page.dart';
+import 'package:qattah_project/pages/general/navbar_page.dart';
 import 'package:qattah_project/pages/welcome/welcome_page.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
 
