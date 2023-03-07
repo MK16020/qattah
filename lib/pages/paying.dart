@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:qattah_project/constants/qcolors.dart';
 
-class WayToPaying extends StatefulWidget {
-  const WayToPaying({super.key});
+import '../constants/qcolors.dart';
 
-  @override
-  State<WayToPaying> createState() => _WayToPayingState();
-}
-
-class _WayToPayingState extends State<WayToPaying> {
-  FocusNode focusNode = FocusNode(); // declear a focusNode object
+class Paying extends StatelessWidget {
+  const Paying({super.key});
 
   @override
   Widget build(BuildContext context) {
