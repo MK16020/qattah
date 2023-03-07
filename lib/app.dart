@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/pages/navbar_page.dart';
-import 'package:qattah_project/pages/signup/first_register_page.dart';
+
+import 'pages/details_member_activity.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -24,7 +25,7 @@ class _AppState extends State<App> {
                     child: NavbarPage(),
                   ),
                 )
-              : const FirstRegisterPage();
+              : const DetailsMemberActivity();
         },
       ),
       theme: ThemeData(fontFamily: 'AllGenders'),

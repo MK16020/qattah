@@ -30,7 +30,7 @@ class SettingsPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const AccountPage()),
                 );
               },
-              child: const Row(
+              child: Row(
                 children: [
                   Expanded(flex: 1, child: Placeholder()),
                   Expanded(
