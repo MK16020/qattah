@@ -30,9 +30,16 @@ class SettingsPage extends StatelessWidget {
                 );
               },
               child: Row(
-                children: const [
-                  // Expanded(flex: 1, child: AccountImage()),
-                  Expanded(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: QLightGrey,
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: const Placeholder(fallbackWidth: 120, fallbackHeight: 130),
+                    // child: Image.file(imageFile!, width: 120, height: 130, fit: BoxFit.cover),
+                  ),
+                  const Expanded(
                     flex: 4,
                     child: ListTile(
                       title: Text('نورة '),
