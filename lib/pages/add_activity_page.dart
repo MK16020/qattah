@@ -45,7 +45,6 @@ class AddActivityPage extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: Colors.white,
     );
   }
 }

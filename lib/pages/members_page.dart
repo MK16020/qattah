@@ -48,7 +48,6 @@ class MembersPage extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: Colors.white,
     );
   }
 }

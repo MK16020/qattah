@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/pages/account_page.dart';
+import 'package:theme_mode_builder/theme_mode_builder.dart';
 
 import '../components/q_account_option.dart';
 import '../constants/qcolors.dart';
@@ -51,10 +52,52 @@ class SettingsPage extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'Current Mode: ${ThemeModeBuilderConfig.isDarkTheme() ? 'Dark' : 'Light'}',
+                  style: const TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                    onPressed: () async {
+                      await ThemeModeBuilderConfig.toggleTheme();
+                    },
+                    child: const Text('Toggle Mode')),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    ElevatedButton.icon(
+                        onPressed: ThemeModeBuilderConfig.isDarkTheme()
+                            ? () async {
+                                await ThemeModeBuilderConfig.toggleTheme();
+                              }
+                            : () async {
+                                await ThemeModeBuilderConfig.toggleTheme();
+                              },
+                        icon: const Icon(Icons.lightbulb),
+                        label: const Text('Light Mode')),
+                    ElevatedButton.icon(
+                      onPressed: ThemeModeBuilderConfig.isDarkTheme()
+                          ? () async {
+                              await ThemeModeBuilderConfig.toggleTheme();
+                            }
+                          : () async {
+                              await ThemeModeBuilderConfig.toggleTheme();
+                            },
+                      icon: const Icon(Icons.lightbulb_outline),
+                      label: const Text('Dark Mode'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
             TextButton(
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-              },
+              onPressed: () {},
               child: const Text(
                 'تسجيل الخروج',
                 style: TextStyle(color: QLightestGreen),

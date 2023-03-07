@@ -92,7 +92,6 @@ class FullGroupsPage extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: Colors.white,
     );
   }
 }

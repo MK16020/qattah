@@ -40,6 +40,7 @@ dependencies:
     firebase_auth: ^4.2.9
     lottie: ^2.2.0
     image_picker: ^0.8.6+4
+    theme_mode_builder:
 
 dev_dependencies:
     flutter_test:

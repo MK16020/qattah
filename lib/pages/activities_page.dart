@@ -48,7 +48,6 @@ class ActivitiesPage extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: Colors.white,
     );
   }
 }

@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:qattah_project/pages/navbar_page.dart';
-
-import 'pages/details_member_activity.dart';
+import 'package:qattah_project/pages/welcome/welcome_page.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -22,10 +20,10 @@ class _AppState extends State<App> {
               ? const Scaffold(
                   body: Directionality(
                     textDirection: TextDirection.rtl,
-                    child: NavbarPage(),
+                    child: WelcomePage(),
                   ),
                 )
-              : const DetailsMemberActivity();
+              : const WelcomePage();
         },
       ),
       theme: ThemeData(fontFamily: 'AllGenders'),

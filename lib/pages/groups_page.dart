@@ -60,7 +60,6 @@ class GroupsPage extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: Colors.white,
     );
   }
 }
