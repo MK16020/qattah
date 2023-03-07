@@ -47,5 +47,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+    <string>Camera access enables you to take a photo for your profile on Qattah.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Library access enables you to set your profile photo on Qattah</string>
 </dict>
 </plist>

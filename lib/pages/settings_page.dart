@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/pages/account_page.dart';
 
-import '../components/account_image.dart';
 import '../components/q_account_option.dart';
 import '../constants/qcolors.dart';
 
@@ -32,7 +31,7 @@ class SettingsPage extends StatelessWidget {
               },
               child: Row(
                 children: const [
-                  Expanded(flex: 1, child: AccountImage()),
+                  // Expanded(flex: 1, child: AccountImage()),
                   Expanded(
                     flex: 4,
                     child: ListTile(

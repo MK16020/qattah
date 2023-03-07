@@ -14,10 +14,11 @@ class AccountPage extends StatelessWidget {
         title: const Text('الحساب', style: TextStyle(color: QMainGreen, fontSize: 24)),
         actions: <Widget>[
           IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_forward_ios, color: QDarkerGrey)),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.arrow_forward_ios, color: QDarkerGrey),
+          ),
         ],
         elevation: 0.5,
         backgroundColor: Colors.white,
