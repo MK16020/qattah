@@ -11,17 +11,18 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('الحساب', style: TextStyle(color: QMainGreen, fontSize: 24)),
+        title: const Text('الحساب', style: TextStyle(fontSize: 24)),
         actions: <Widget>[
           IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: const Icon(Icons.arrow_forward_ios, color: QDarkerGrey),
+            icon: const Icon(
+              Icons.arrow_forward_ios,
+            ),
           ),
         ],
         elevation: 0.5,
-        backgroundColor: Colors.white,
         centerTitle: true,
       ),
       body: Directionality(

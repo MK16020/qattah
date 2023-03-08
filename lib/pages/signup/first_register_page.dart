@@ -46,10 +46,8 @@ class _FirstRegisterPageState extends State<FirstRegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back_ios, color: QDarkerGrey)),
-        title: const Text('إنشاء حساب جديد', style: TextStyle(color: QMainGreen, fontSize: 24)),
-        elevation: 0.5,
-        backgroundColor: Colors.white,
+        leading: IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back_ios,)),
+        title: const Text('إنشاء حساب جديد', style: TextStyle( fontSize: 24)),
         centerTitle: true,
       ),
       body: Directionality(

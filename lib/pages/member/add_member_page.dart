@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/pages/activity/add_qattah_page.dart';
 
-import '../../constants/qcolors.dart';
-
 class AddMemberPage extends StatelessWidget {
   const AddMemberPage({super.key});
 
@@ -14,9 +12,11 @@ class AddMemberPage extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(Icons.arrow_back_ios, color: QDarkerGrey),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+          ),
         ),
-        title: const Text('اضافة حساب', style: TextStyle(color: QMainGreen, fontSize: 24)),
+        title: const Text('اضافة حساب', style: TextStyle(fontSize: 24)),
         actions: [
           TextButton(
             onPressed: () {
@@ -27,12 +27,9 @@ class AddMemberPage extends StatelessWidget {
             },
             child: const Text(
               'حفظ',
-              style: TextStyle(color: QDarkerGrey),
             ),
           ),
         ],
-        elevation: 0.5,
-        backgroundColor: Colors.white,
         centerTitle: true,
       ),
       body: Padding(
@@ -41,8 +38,8 @@ class AddMemberPage extends StatelessWidget {
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
+            children: const [
+              SizedBox(
                 height: 12,
               ),
               Padding(

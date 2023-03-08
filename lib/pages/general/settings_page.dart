@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/pages/general/account_page.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
@@ -13,9 +12,7 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('الاعدادات', style: TextStyle(color: QMainGreen, fontSize: 24)),
-        elevation: 0.5,
-        backgroundColor: Colors.white,
+        title: const Text('الاعدادات', style: TextStyle(fontSize: 24)),
         centerTitle: true,
       ),
       body: Directionality(
@@ -33,8 +30,15 @@ class SettingsPage extends StatelessWidget {
               },
               child: Row(
                 children: [
-                  Expanded(flex: 1, child: Placeholder()),
-                  Expanded(
+                  Container(
+                    decoration: BoxDecoration(
+                      color: QLightGrey,
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: const Placeholder(fallbackWidth: 120, fallbackHeight: 130),
+                    // child: Image.file(imageFile!, width: 120, height: 130, fit: BoxFit.cover),
+                  ),
+                  const Expanded(
                     flex: 4,
                     child: ListTile(
                       title: Text('نورة '),
@@ -63,25 +67,15 @@ class SettingsPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
-                    onPressed: () async {
-                      await ThemeModeBuilderConfig.toggleTheme();
-                    },
-                    child: const Text('Toggle Mode')),
+                // TextButton(
+                //     onPressed: () async {
+                //       await ThemeModeBuilderConfig.toggleTheme();
+                //     },
+                //     child: const Text('Toggle Mode')),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    ElevatedButton.icon(
-                        onPressed: ThemeModeBuilderConfig.isDarkTheme()
-                            ? () async {
-                                await ThemeModeBuilderConfig.toggleTheme();
-                              }
-                            : () async {
-                                await ThemeModeBuilderConfig.toggleTheme();
-                              },
-                        icon: const Icon(Icons.lightbulb),
-                        label: const Text('Light Mode')),
-                    ElevatedButton.icon(
+                    TextButton.icon(
                       onPressed: ThemeModeBuilderConfig.isDarkTheme()
                           ? () async {
                               await ThemeModeBuilderConfig.toggleTheme();
@@ -89,8 +83,31 @@ class SettingsPage extends StatelessWidget {
                           : () async {
                               await ThemeModeBuilderConfig.toggleTheme();
                             },
-                      icon: const Icon(Icons.lightbulb_outline),
-                      label: const Text('Dark Mode'),
+                      icon: const Icon(
+                        Icons.lightbulb_outline,
+                        color: QLightPink,
+                      ),
+                      label: const Text(
+                        'Light Mode',
+                        style: TextStyle(color: QMainPink),
+                      ),
+                    ),
+                    TextButton.icon(
+                      onPressed: ThemeModeBuilderConfig.isDarkTheme()
+                          ? () async {
+                              await ThemeModeBuilderConfig.toggleTheme();
+                            }
+                          : () async {
+                              await ThemeModeBuilderConfig.toggleTheme();
+                            },
+                      icon: const Icon(
+                        Icons.lightbulb,
+                        color: QLightPink,
+                      ),
+                      label: const Text(
+                        'Dark Mode',
+                        style: TextStyle(color: QMainPink),
+                      ),
                     ),
                   ],
                 ),

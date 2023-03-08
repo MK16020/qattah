@@ -9,16 +9,20 @@ class FullGroupsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.group_add, size: 32, color: QLightPink),
-        title: const Text('المجموعات', style: TextStyle(color: QMainGreen, fontSize: 24)),
+        leading: const Icon(
+          Icons.group_add,
+          size: 32,
+        ),
+        title: const Text('المجموعات', style: TextStyle(fontSize: 24)),
         actions: const [
           Padding(
             padding: EdgeInsets.all(16.0),
-            child: Icon(Icons.search, size: 32, color: Colors.black),
+            child: Icon(
+              Icons.search,
+              size: 32,
+            ),
           ),
         ],
-        elevation: 0.5,
-        backgroundColor: Colors.white,
         centerTitle: true,
       ),
       body: Column(

@@ -9,9 +9,7 @@ class AddActivityPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('أحدث النشاطات', style: TextStyle(color: QMainGreen, fontSize: 24)),
-        elevation: 0.5,
-        backgroundColor: Colors.white,
+        title: const Text('أحدث النشاطات', style: TextStyle(fontSize: 24)),
         centerTitle: true,
       ),
       body: Column(

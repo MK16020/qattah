@@ -9,9 +9,7 @@ class ActivitiesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('أحدث النشاطات', style: TextStyle(color: QMainGreen, fontSize: 24)),
-        elevation: 0.5,
-        backgroundColor: Colors.white,
+        title: const Text('أحدث النشاطات', style: TextStyle(fontSize: 24)),
         centerTitle: true,
       ),
       body: Directionality(
@@ -33,7 +31,7 @@ class ActivitiesPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              Image.asset('assets/images/empty_activities.png'),
+              Image.asset('assets/images/empty_activities0.png'),
               const SizedBox(height: 100),
               const Text(
                 'حاول إضافة نشاط!',

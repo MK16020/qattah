@@ -39,9 +39,7 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
             color: QDarkerGrey,
           ),
         ),
-        title: const Text('إنشاء حساب جديد', style: TextStyle(color: QMainGreen, fontSize: 24)),
-        elevation: 0.5,
-        backgroundColor: Colors.white,
+        title: const Text('إنشاء حساب جديد', style: TextStyle(fontSize: 24)),
         centerTitle: true,
       ),
       body: Directionality(

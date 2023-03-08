@@ -14,20 +14,19 @@ class AddGroupPage extends StatelessWidget {
           onPressed: () {},
           child: const Text(
             'حفظ',
-            style: TextStyle(color: QLightGrey),
           ),
         ),
-        title: const Text('إنشاء مجموعة', style: TextStyle(color: QMainGreen, fontSize: 24)),
+        title: const Text('إنشاء مجموعة', style: TextStyle(fontSize: 24)),
         actions: [
           IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: const Icon(Icons.close, color: QDarkerGrey),
+            icon: const Icon(
+              Icons.close,
+            ),
           ),
         ],
-        elevation: 0.5,
-        backgroundColor: Colors.white,
         centerTitle: true,
       ),
       body: Directionality(
@@ -89,7 +88,7 @@ class AddGroupPage extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: const BoxDecoration(
-                      color: Colors.white,
+                      // color: Colors.white,
                       border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: 0.5)),
                       borderRadius: BorderRadius.all(Radius.circular(24)),
                     ),
@@ -115,7 +114,7 @@ class AddGroupPage extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: const BoxDecoration(
-                      color: Colors.white,
+                      // color: Colors.white,
                       border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: 0.5)),
                       borderRadius: BorderRadius.all(Radius.circular(24)),
                     ),
@@ -141,7 +140,7 @@ class AddGroupPage extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: const BoxDecoration(
-                      color: Colors.white,
+                      // color: Colors.white,
                       border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: 0.5)),
                       borderRadius: BorderRadius.all(Radius.circular(24)),
                     ),

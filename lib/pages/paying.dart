@@ -9,13 +9,11 @@ class Paying extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.close, color: QMainPink),
-        title: const Text('تسجيل الدفع', style: TextStyle(color: QMainGreen, fontSize: 20)),
+        leading: const Icon(Icons.close),
+        title: const Text('تسجيل الدفع', style: TextStyle(fontSize: 20)),
         actions: [
-          TextButton(onPressed: () {}, child: const Text('حفظ', style: TextStyle(color: QLightGreen, fontSize: 20))),
+          TextButton(onPressed: () {}, child: const Text('حفظ', style: TextStyle(fontSize: 20))),
         ],
-        elevation: 0.5,
-        backgroundColor: Colors.white,
       ),
       body: Directionality(
         textDirection: TextDirection.rtl,

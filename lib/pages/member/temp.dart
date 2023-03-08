@@ -7,10 +7,7 @@ class Temp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-      ),
+      appBar: AppBar(),
       bottomSheet: BottomSheet(
         onClosing: () {},
         builder: (BuildContext context) {

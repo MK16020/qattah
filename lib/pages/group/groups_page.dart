@@ -10,9 +10,7 @@ class GroupsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('المجموعات', style: TextStyle(color: QMainGreen, fontSize: 24)),
-        elevation: 0.5,
-        backgroundColor: Colors.white,
+        title: const Text('المجموعات', style: TextStyle(fontSize: 24)),
         centerTitle: true,
       ),
       body: Directionality(
@@ -34,7 +32,7 @@ class GroupsPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              Image.asset('assets/images/empty_groups.png'),
+              Image.asset('assets/images/empty_groups0.png'),
               const SizedBox(height: 100),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 64),
@@ -46,7 +44,7 @@ class GroupsPage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
+                    // backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                     padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
                   ),

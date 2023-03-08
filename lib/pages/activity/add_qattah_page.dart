@@ -23,19 +23,20 @@ class _AddQattahPageState extends State<AddQattahPage> {
       appBar: AppBar(
         leading: TextButton(
           onPressed: () {},
-          child: const Text('حفظ', style: TextStyle(color: QDarkerGrey)),
+          child: const Text('حفظ', style: TextStyle()),
         ),
-        title: const Text('اضافة حساب', style: TextStyle(color: QMainGreen, fontSize: 24)),
+        title: const Text('اضافة حساب', style: TextStyle(fontSize: 24)),
         actions: [
           IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: const Icon(Icons.arrow_forward_ios, color: QDarkerGrey),
+            icon: const Icon(
+              Icons.arrow_forward_ios,
+            ),
           ),
         ],
         elevation: 0.5,
-        backgroundColor: Colors.white,
         centerTitle: true,
       ),
       body: Directionality(

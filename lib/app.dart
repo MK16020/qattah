@@ -4,6 +4,9 @@ import 'package:qattah_project/pages/general/navbar_page.dart';
 import 'package:qattah_project/pages/welcome/welcome_page.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
 
+import 'components/dark_theme.dart';
+import 'components/light_theme.dart';
+
 class App extends StatefulWidget {
   const App({super.key});
 
@@ -24,8 +27,8 @@ class _AppState extends State<App> {
                 : const WelcomePage();
           },
         ),
-        theme: ThemeData(brightness: Brightness.light, fontFamily: 'AllGenders'),
-        darkTheme: ThemeData(brightness: Brightness.dark, fontFamily: 'AllGenders'),
+        theme: lightThemeData(context),
+        darkTheme: darkThemeData(context),
         themeMode: themeMode,
         debugShowCheckedModeBanner: false,
       );

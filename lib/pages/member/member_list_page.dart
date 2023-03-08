@@ -32,8 +32,6 @@ class MemberListPage extends StatelessWidget {
             ),
           ),
         ],
-        elevation: 0.5,
-        backgroundColor: Colors.white,
         centerTitle: true,
       ),
       body: Directionality(

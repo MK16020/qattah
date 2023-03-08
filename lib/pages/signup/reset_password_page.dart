@@ -31,15 +31,12 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
           },
           icon: const Icon(
             Icons.arrow_back_ios,
-            color: QDarkerGrey,
           ),
         ),
         title: const Text(
           'إعادة ضبط كلمة المرور ',
-          style: TextStyle(color: QMainGreen, fontSize: 24),
+          style: TextStyle(fontSize: 24),
         ),
-        elevation: 0.5,
-        backgroundColor: Colors.white,
         centerTitle: true,
       ),
       body: Directionality(
