@@ -4,7 +4,6 @@ import '../constants/qcolors.dart';
 
 ThemeData darkThemeData(BuildContext context) {
   return ThemeData(
-    canvasColor: Colors.black,
     colorScheme: const ColorScheme(
         brightness: Brightness.dark,
         primary: Colors.white,
