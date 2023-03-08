@@ -84,7 +84,7 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
                     .createUserWithEmailAndPassword(email: widget.email, password: widget.password);
                 if (FirebaseAuth.instance.currentUser != null) {
                   print(FirebaseAuth.instance.currentUser?.uid);
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => const NavbarPage()),
                   );
