@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/pages/member/details_member_activity.dart';
@@ -18,7 +16,6 @@ class App extends StatefulWidget {
 class AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
-    log('message');
     return ThemeModeBuilder(builder: (BuildContext context, ThemeMode themeMode) {
       return MaterialApp(
         home: StreamBuilder<User?>(
