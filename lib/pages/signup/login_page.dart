@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
     if (errorMessage.isNotEmpty) {
       return Future.error(errorMessage);
     }
-    
+
     return FirebaseFirestore.instance.collection('User').doc(userId).get();
   }
 
@@ -138,7 +136,6 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () {
                 signIn();
                 if (errorMessage.isNotEmpty) {
-                  
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

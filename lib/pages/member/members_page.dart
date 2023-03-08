@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qattah_project/pages/member/add_member_page.dart';
 
 import '../../constants/qcolors.dart';
 
@@ -30,7 +31,12 @@ class MembersPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 64),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const AddMemberPage()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     // backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),

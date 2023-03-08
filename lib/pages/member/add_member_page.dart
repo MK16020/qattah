@@ -16,7 +16,7 @@ class AddMemberPage extends StatelessWidget {
             Icons.arrow_back_ios,
           ),
         ),
-        title: const Text('اضافة حساب', style: TextStyle(fontSize: 24)),
+        title: const Text('اضافة عضو', style: TextStyle(fontSize: 24)),
         actions: [
           TextButton(
             onPressed: () {
