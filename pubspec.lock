@@ -265,6 +265,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.2"
+  firebase_storage:
+    dependency: "direct main"
+    description:
+      name: firebase_storage
+      sha256: f19205107b521752384497024b3554ecfecd5d142ad08b522dff1f81dd81efc4
+      url: "https://pub.dev"
+    source: hosted
+    version: "11.0.15"
+  firebase_storage_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_storage_platform_interface
+      sha256: "818e64f900401b6553184c9e1ca9ac057029d75d85f07f974f155b6e019699d6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.1.31"
+  firebase_storage_web:
+    dependency: transitive
+    description:
+      name: firebase_storage_web
+      sha256: "1244fb06db0f5a28a20057919c3e45bd745b9bc37feb5a25ba2aaa4b4947dd74"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.3.24"
   flutter:
     dependency: "direct main"
     description: flutter

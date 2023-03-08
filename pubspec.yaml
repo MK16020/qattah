@@ -19,7 +19,7 @@ dependencies:
     image_picker: ^0.8.6+4
     theme_mode_builder:
     cloud_firestore: ^4.4.4
-
+    firebase_storage: ^11.0.15
 dev_dependencies:
     flutter_test:
         sdk: flutter
