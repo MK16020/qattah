@@ -60,14 +60,14 @@ class SettingsPage extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  'Current Mode: ${ThemeModeBuilderConfig.isDarkTheme() ? 'Dark' : 'Light'}',
-                  style: const TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 20),
+                // Text(
+                //   'Current Mode: ${ThemeModeBuilderConfig.isDarkTheme() ? 'Dark' : 'Light'}',
+                //   style: const TextStyle(
+                //     fontSize: 25,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
+                // const SizedBox(height: 20),
                 // TextButton(
                 //     onPressed: () async {
                 //       await ThemeModeBuilderConfig.toggleTheme();
