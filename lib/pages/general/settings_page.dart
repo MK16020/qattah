@@ -28,7 +28,7 @@ class SettingsPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const AccountPage()),
                 );
               },
-              child: Row(
+              child: const Row(
                 children: [
                   Container(
                     decoration: BoxDecoration(
@@ -114,7 +114,9 @@ class SettingsPage extends StatelessWidget {
               ],
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+              },
               child: const Text(
                 'تسجيل الخروج',
                 style: TextStyle(color: QLightestGreen),

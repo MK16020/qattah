@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:qattah_project/app.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
 import 'package:qattah_project/components/q_title.dart';
@@ -131,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
               title: 'تسجيل الدخول',
               onPressed: () {
                 signIn();
-                setState(() {});
+                context.findAncestorStateOfType<AppState>()?.setState(() {});
               },
             ),
           ],

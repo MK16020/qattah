@@ -1,7 +1,9 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/pages/general/navbar_page.dart';
-import 'package:qattah_project/pages/welcome/welcome_page.dart';
+import 'package:qattah_project/pages/member/details_member_activity.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
 
 import 'components/dark_theme.dart';
@@ -11,12 +13,13 @@ class App extends StatefulWidget {
   const App({super.key});
 
   @override
-  State<App> createState() => _AppState();
+  State<App> createState() => AppState();
 }
 
-class _AppState extends State<App> {
+class AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
+    log('message');
     return ThemeModeBuilder(builder: (BuildContext context, ThemeMode themeMode) {
       return MaterialApp(
         home: StreamBuilder<User?>(
@@ -24,7 +27,7 @@ class _AppState extends State<App> {
           builder: (context, snapshot) {
             return snapshot.hasData
                 ? const Scaffold(body: Directionality(textDirection: TextDirection.rtl, child: NavbarPage()))
-                : const WelcomePage();
+                : const DetailsMemberActivity();
           },
         ),
         theme: lightThemeData(context),
