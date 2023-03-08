@@ -7,6 +7,18 @@ class DetailsMemberActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: QMainPink,
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: Directionality(
         textDirection: TextDirection.rtl,
         child: Column(
@@ -15,16 +27,14 @@ class DetailsMemberActivity extends StatelessWidget {
               children: [
                 SizedBox(
                   width: double.infinity,
-                  height: 240,
+                  height: 180,
                   child: Image.network(
                     'https://media.istockphoto.com/id/1257109046/vector/invest-in-the-companys-bonds-stock-market-crash.jpg?s=612x612&w=0&k=20&c=EruxU4G9wMnEr98bmVpPnh4cm9Zz9b2agNrvZEKg3XY=',
                   ),
                 ),
-                const Positioned(left: 20, top: 80, child: Icon(Icons.settings_outlined, size: 28)),
-                const Positioned(left: 388, top: 80, child: Icon(Icons.arrow_back_ios, size: 28)),
                 Positioned(
                   left: 300,
-                  top: 212,
+                  top: 112,
                   child: Container(
                     decoration: const BoxDecoration(
                       color: Color.fromARGB(255, 221, 219, 219),
@@ -68,7 +78,7 @@ class DetailsMemberActivity extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.deepOrange,
+                    color: QMainPink,
                     borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                     boxShadow: [
                       BoxShadow(
@@ -100,31 +110,6 @@ class DetailsMemberActivity extends StatelessWidget {
                   width: 120.0,
                   height: 48.0,
                   child: const Center(child: Text('تذكير..', style: TextStyle(fontSize: 16.0, color: Colors.black))),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        offset: const Offset(0, 3),
-                        blurRadius: 7,
-                        spreadRadius: 1,
-                      ),
-                    ],
-                  ),
-                  width: 120.0,
-                  height: 48.0,
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text('رسوم بيانية', style: TextStyle(color: Colors.black, fontSize: 16.0)),
-                        Icon(Icons.draw_outlined),
-                      ],
-                    ),
-                  ),
                 ),
               ],
             ),
