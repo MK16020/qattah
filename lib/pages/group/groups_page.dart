@@ -55,7 +55,7 @@ class GroupsPage extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const AddGroupPage()),
                       );
                     },
-                    child: const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                    child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: const [
                       Text('إبدأ مجموعة', style: TextStyle(color: QMainPink, fontSize: 20)),
                       Icon(Icons.group_add_outlined, color: QMainPink),
                     ]),
