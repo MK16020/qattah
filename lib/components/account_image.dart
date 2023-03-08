@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -52,15 +53,17 @@ class _AccountImageState extends State<AccountImage> {
   }
 
   _getFromGallery() async {
+    final firebaseStorage = FirebaseStorage.instance;
     PickedFile? pickedFile = await ImagePicker().getImage(
       source: ImageSource.gallery,
       maxWidth: 500,
       maxHeight: 500,
     );
-    if (pickedFile != null) {
-      setState(() {
-        imageFile = File(pickedFile.path);
-      });
-    }
+    var file = File(pickedFile!.path);
+    var snapshot = await firebaseStorage.ref().child('images/imageName').putFile(file);
+    var downloadUrl = await snapshot.ref.getDownloadURL();
+    setState(() {
+      imageFile = File(pickedFile.path);
+    });
   }
 }

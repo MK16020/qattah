@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:qattah_project/models/expense_model.dart';
 import 'package:qattah_project/models/group_model.dart';
 import 'package:qattah_project/models/user_model.dart';
-import 'package:qattah_project/pages/member/details_member_activity.dart';
+import 'package:qattah_project/pages/general/navbar_page.dart';
+import 'package:qattah_project/pages/welcome/welcome_page.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
 
 import 'components/dark_theme.dart';
@@ -79,8 +80,8 @@ class AppState extends State<App> {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             return snapshot.hasData
-                ? const Scaffold(body: Directionality(textDirection: TextDirection.rtl, child: DetailsMemberActivity()))
-                : const DetailsMemberActivity();
+                ? const Scaffold(body: Directionality(textDirection: TextDirection.rtl, child: NavbarPage()))
+                : const WelcomePage();
           },
         ),
         theme: lightThemeData(context),
