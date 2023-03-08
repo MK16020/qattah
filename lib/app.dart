@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:qattah_project/pages/general/navbar_page.dart';
 import 'package:qattah_project/pages/member/details_member_activity.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
 
@@ -26,7 +25,7 @@ class AppState extends State<App> {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             return snapshot.hasData
-                ? const Scaffold(body: Directionality(textDirection: TextDirection.rtl, child: NavbarPage()))
+                ? const Scaffold(body: Directionality(textDirection: TextDirection.rtl, child: DetailsMemberActivity()))
                 : const DetailsMemberActivity();
           },
         ),

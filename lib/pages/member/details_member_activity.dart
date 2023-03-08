@@ -13,9 +13,11 @@ class DetailsMemberActivity extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Container(
+                SizedBox(
+                  width: double.infinity,
+                  height: 280,
                   child: Image.network(
-                    'https://img.freepik.com/free-vector/illustration-saving-money-household-sector-investment-spending-daily-life_1150-41786.jpg',
+                    'https://media.istockphoto.com/id/1257109046/vector/invest-in-the-companys-bonds-stock-market-crash.jpg?s=612x612&w=0&k=20&c=EruxU4G9wMnEr98bmVpPnh4cm9Zz9b2agNrvZEKg3XY=',
                   ),
                 ),
                 const Positioned(left: 20, top: 80, child: Icon(Icons.settings_outlined, size: 28)),
