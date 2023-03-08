@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -7,16 +10,20 @@ import 'package:image_picker/image_picker.dart';
 import '../constants/qcolors.dart';
 
 class AccountImage extends StatefulWidget {
-  const AccountImage({
-    super.key,
-  });
+  const AccountImage({super.key, required this.imageUrl});
+  final String imageUrl;
 
   @override
   State<AccountImage> createState() => _AccountImageState();
 }
 
 class _AccountImageState extends State<AccountImage> {
-  File? imageFile;
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -31,11 +38,11 @@ class _AccountImageState extends State<AccountImage> {
             width: 120,
             height: 120,
             clipBehavior: Clip.hardEdge,
-            child: imageFile == null
+            child: widget.imageUrl == null
                 ? Container(
                     decoration: BoxDecoration(color: QLightGrey, borderRadius: BorderRadius.circular(100)),
                   )
-                : Image.file(imageFile!, width: 120, height: 130, fit: BoxFit.cover),
+                : CachedNetworkImage(imageUrl: widget.imageUrl, width: 120, height: 130, fit: BoxFit.cover),
           ),
           Positioned(
             left: 5,
@@ -59,11 +66,12 @@ class _AccountImageState extends State<AccountImage> {
       maxWidth: 500,
       maxHeight: 500,
     );
-    var file = File(pickedFile!.path);
+    var file = File(pickedFile?.path ?? '');
     var snapshot = await firebaseStorage.ref().child('images/imageName').putFile(file);
     var downloadUrl = await snapshot.ref.getDownloadURL();
-    setState(() {
-      imageFile = File(pickedFile.path);
-    });
+    await FirebaseFirestore.instance
+        .collection('User')
+        .doc(FirebaseAuth.instance.currentUser?.uid)
+        .set({'imageUrl': downloadUrl});
   }
 }

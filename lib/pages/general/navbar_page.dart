@@ -15,7 +15,13 @@ class NavbarPage extends StatefulWidget {
 }
 
 class _NavbarPageState extends State<NavbarPage> {
-  final pages = [const MembersPage(), const GroupsPage(), const Temp(), const ActivitiesPage(), const SettingsPage()];
+  final pages = [
+    const MembersPage(),
+    const GroupsPage(),
+    const Temp(),
+    const ActivitiesPage(),
+    const SettingsPage(),
+  ];
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {

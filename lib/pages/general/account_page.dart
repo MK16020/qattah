@@ -1,11 +1,40 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/constants/qcolors.dart';
+import 'package:qattah_project/models/user_model.dart';
 
 import '../../components/account_image.dart';
 import '../../components/q_account_option.dart';
 
-class AccountPage extends StatelessWidget {
+class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
+
+  @override
+  State<AccountPage> createState() => _AccountPageState();
+}
+
+class _AccountPageState extends State<AccountPage> {
+  late UserModel user;
+
+  @override
+  void initState() {
+    super.initState();
+    getUserInfo();
+  }
+
+  getUserInfo() async {
+    FirebaseFirestore.instance
+        .collection('User')
+        .doc(FirebaseAuth.instance.currentUser?.uid)
+        .snapshots()
+        .listen((event) {
+      final newUser = UserModel.fromMap(event.data() ?? {});
+      setState(() {
+        user = newUser;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +59,9 @@ class AccountPage extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
           children: [
-            const AccountImage(),
+            AccountImage(
+              imageUrl: user.imageUrl,
+            ),
             const SizedBox(height: 30),
             Container(
               decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: QLightGrey))),
@@ -38,7 +69,7 @@ class AccountPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(width: 100),
-                  const Text('نورة '),
+                  Text(user.name),
                   const SizedBox(width: 100),
                   IconButton(
                     onPressed: () {},

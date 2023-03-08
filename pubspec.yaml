@@ -18,8 +18,9 @@ dependencies:
     lottie: ^2.2.0
     image_picker: ^0.8.6+4
     theme_mode_builder:
-    cloud_firestore: ^4.4.4
+    cloud_firestore:
     firebase_storage: ^11.0.15
+    cached_network_image: ^3.2.3
 dev_dependencies:
     flutter_test:
         sdk: flutter
