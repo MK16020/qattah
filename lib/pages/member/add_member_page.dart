@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qattah_project/constants/qcolors.dart';
 import 'package:qattah_project/pages/activity/add_qattah_page.dart';
+import 'package:qattah_project/pages/member/member_list_page.dart';
 
 class AddMemberPage extends StatelessWidget {
   const AddMemberPage({super.key});
@@ -38,16 +40,16 @@ class AddMemberPage extends StatelessWidget {
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              SizedBox(
+            children: [
+              const SizedBox(
                 height: 12,
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(12.0),
                 child: Text('الاسم',
                     style: TextStyle(color: Color(0XFF33523E), fontSize: 16), textAlign: TextAlign.center),
               ),
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                   hintText: '...اسم',
                   focusedBorder: OutlineInputBorder(
@@ -61,11 +63,20 @@ class AddMemberPage extends StatelessWidget {
                   border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
                 ),
               ),
-              Expanded(
-                flex: 6,
-                child: TextField(
-                  decoration:
-                      InputDecoration(hintText: 'ادخل اسم، بريد إلكتروني، أو رقم جوال', border: InputBorder.none),
+              const TextField(
+                decoration: InputDecoration(hintText: 'ادخل اسم، بريد إلكتروني، أو رقم جوال', border: InputBorder.none),
+              ),
+              Center(
+                child: SizedBox(
+                  width: 120,
+                  height: 40,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const MemberListPage()));
+                    },
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(QMainPink)),
+                    child: const Text('إضافة', style: TextStyle(color: QMainGreen)),
+                  ),
                 ),
               ),
             ],
