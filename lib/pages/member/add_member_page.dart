@@ -10,7 +10,7 @@ class AddMemberPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text('إضافة عضو', style: TextStyle(fontSize: 24)),
+        title: const Text('إضافة صديق', style: TextStyle(fontSize: 24)),
         actions: [
           TextButton(
             onPressed: () {

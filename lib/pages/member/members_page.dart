@@ -10,7 +10,7 @@ class MembersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('الأعضاء', style: TextStyle(fontSize: 24)),
+        title: const Text('الأصدقاء', style: TextStyle(fontSize: 24)),
         centerTitle: true,
       ),
       body: Directionality(
@@ -22,7 +22,7 @@ class MembersPage extends StatelessWidget {
               const Text('مرحبًا ...', style: TextStyle(fontSize: 24)),
               const SizedBox(height: 40),
               const Text(
-                'ليس لديك أي أعضاء حتى الآن',
+                'لم يتم إضافة أصدقاء حتى الآن',
                 style: TextStyle(color: QDarkerGrey, fontSize: 24, fontWeight: FontWeight.w300),
               ),
               const SizedBox(height: 30),
@@ -43,7 +43,7 @@ class MembersPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
                   ),
                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: const [
-                    Text('إضافة أعضاء', style: TextStyle(color: QMainPink, fontSize: 20)),
+                    Text('إضافة صديق', style: TextStyle(color: QMainPink, fontSize: 20)),
                     Icon(Icons.group_add_outlined, color: QMainPink),
                   ]),
                 ),

@@ -18,7 +18,7 @@ class MemberListPage extends StatelessWidget {
           ),
         ),
         title: const Text(
-          'الأعضاء',
+          'الأصدقاء',
           style: TextStyle(color: QMainGreen, fontSize: 24),
         ),
         actions: [
