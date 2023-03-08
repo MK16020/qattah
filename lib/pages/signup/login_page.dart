@@ -1,5 +1,6 @@
 import 'dart:html';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
@@ -23,12 +24,14 @@ class _LoginPageState extends State<LoginPage> {
   String errorMessage = '';
   Future signIn() async {
     User? user;
+    var userId;
     try {
       UserCredential result = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
       );
       user = result.user;
+      userId = user!.uid;
     } catch (error) {
       switch (error.toString()) {
         case 'ERROR_INVALID_EMAIL':
@@ -57,9 +60,8 @@ class _LoginPageState extends State<LoginPage> {
     if (errorMessage.isNotEmpty) {
       return Future.error(errorMessage);
     }
-    user!.uid;
-
-    return user!.uid;
+    
+    return FirebaseFirestore.instance.collection('User').doc(userId).get();
   }
 
   @override

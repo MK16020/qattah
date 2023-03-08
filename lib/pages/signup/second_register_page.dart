@@ -19,26 +19,12 @@ class SecondRegisterPage extends StatefulWidget {
 
 class _SecondRegisterPageState extends State<SecondRegisterPage> {
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-
-  register() async {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(email: widget.email, password: widget.password);
-    var currentUser = FirebaseAuth.instance.currentUser;
-    if (currentUser != null) {
-      UserModel user = UserModel(id: currentUser.uid, name: nameController.text.trim(), imageUrl: 'images/profile.png');
-      print(FirebaseAuth.instance.currentUser?.uid);
-      FirebaseFirestore.instance.collection('User').doc(currentUser.uid).set(user.toMap());
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const NavbarPage()),
-      );
-    }
-  }
+  final TextEditingController phoneController = TextEditingController();
 
   @override
   void dispose() {
     nameController.dispose();
-    passwordController.dispose();
+    phoneController.dispose();
     super.dispose();
   }
 
@@ -69,7 +55,7 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
             ),
             QTextField(
               name: 'رقم الجوال (اختياري)',
-              inputController: passwordController,
+              inputController: phoneController,
               hint: ' 0505xxxxxx',
               isOptional: true,
             ),
@@ -93,7 +79,25 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
             const SizedBox(height: 40),
             QButton(
               title: 'تم',
-              onPressed: register(),
+              onPressed: () async {
+                await FirebaseAuth.instance
+                    .createUserWithEmailAndPassword(email: widget.email, password: widget.password);
+                var currentUser = FirebaseAuth.instance.currentUser;
+                if (currentUser != null) {
+                  UserModel user = UserModel(
+                    id: currentUser.uid,
+                    name: nameController.text.trim(),
+                    imageUrl: 'images/profile.png',
+                    phone: phoneController.text.trim(),
+                  );
+                  print(FirebaseAuth.instance.currentUser?.uid);
+                  FirebaseFirestore.instance.collection('User').doc(currentUser.uid).set(user.toMap());
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const NavbarPage()),
+                  );
+                }
+              },
             ),
             const SizedBox(height: 60),
             Center(
