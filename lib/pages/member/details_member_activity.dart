@@ -15,7 +15,7 @@ class DetailsMemberActivity extends StatelessWidget {
               children: [
                 SizedBox(
                   width: double.infinity,
-                  height: 280,
+                  height: 240,
                   child: Image.network(
                     'https://media.istockphoto.com/id/1257109046/vector/invest-in-the-companys-bonds-stock-market-crash.jpg?s=612x612&w=0&k=20&c=EruxU4G9wMnEr98bmVpPnh4cm9Zz9b2agNrvZEKg3XY=',
                   ),
