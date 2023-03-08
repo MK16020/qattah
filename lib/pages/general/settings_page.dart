@@ -1,12 +1,13 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:qattah_project/models/user_model.dart';
 import 'package:qattah_project/pages/general/account_page.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
 
 import '../../components/q_account_option.dart';
 import '../../constants/qcolors.dart';
-import '../../models/user_model.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({
@@ -18,7 +19,7 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  late UserModel user;
+  UserModel user = UserModel(id: '-', name: '-', imageUrl: '-');
 
   @override
   void initState() {
@@ -60,28 +61,28 @@ class _SettingsPageState extends State<SettingsPage> {
                 );
               },
               child: Row(
-                children: const [
-                  // Container(
-                  //   decoration: const BoxDecoration(
-                  //     borderRadius: BorderRadius.all(
-                  //       Radius.circular(100),
-                  //     ),
-                  //   ),
-                  //   width: 120,
-                  //   height: 120,
-                  //   clipBehavior: Clip.hardEdge,
-                  //   child: widget.imageUrl == null
-                  //       ? Container(
-                  //           decoration: BoxDecoration(color: QLightGrey, borderRadius: BorderRadius.circular(100)),
-                  //         )
-                  //       : CachedNetworkImage(imageUrl: widget.imageUrl, width: 120, height: 130, fit: BoxFit.cover),
-                  // ),
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(100),
+                      ),
+                    ),
+                    width: 120,
+                    height: 120,
+                    clipBehavior: Clip.hardEdge,
+                    child: user.imageUrl == null
+                        ? Container(
+                            decoration: BoxDecoration(color: QLightGrey, borderRadius: BorderRadius.circular(100)),
+                          )
+                        : CachedNetworkImage(imageUrl: user.imageUrl, width: 120, height: 130, fit: BoxFit.cover),
+                  ),
                   Expanded(
                     flex: 4,
                     child: ListTile(
-                      title: Text('نورة '),
-                      subtitle: Text('ex@gmail.com'),
-                      trailing: Icon(Icons.keyboard_arrow_left_outlined),
+                      title: Text(user.name),
+                      subtitle: const Text('ex@gmail.com'),
+                      trailing: const Icon(Icons.keyboard_arrow_left_outlined),
                     ),
                   ),
                 ],

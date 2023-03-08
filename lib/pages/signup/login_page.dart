@@ -1,6 +1,3 @@
-import 'dart:html';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
@@ -133,10 +130,10 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const SizedBox(height: 50),
             QButton(
-              title: 'تسجيل الدخول',
+              title: ' الدخول',
               onPressed: () {
                 signIn();
-                if (errorMessage.isNotEmpty) {
+                if (errorMessage.isEmpty) {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

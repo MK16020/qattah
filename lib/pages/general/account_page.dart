@@ -15,7 +15,7 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
-  late UserModel user;
+  late UserModel user = UserModel(id: '', name: 'User not found', imageUrl: '');
 
   @override
   void initState() {
@@ -23,7 +23,7 @@ class _AccountPageState extends State<AccountPage> {
     getUserInfo();
   }
 
-  getUserInfo() async {
+  getUserInfo() {
     FirebaseFirestore.instance
         .collection('User')
         .doc(FirebaseAuth.instance.currentUser?.uid)
@@ -31,6 +31,7 @@ class _AccountPageState extends State<AccountPage> {
         .listen((event) {
       final newUser = UserModel.fromMap(event.data() ?? {});
       setState(() {
+        if (user.id == '') user = UserModel(id: '', name: 'User not found', imageUrl: '');
         user = newUser;
       });
     });
@@ -60,7 +61,7 @@ class _AccountPageState extends State<AccountPage> {
           padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
           children: [
             AccountImage(
-              imageUrl: user.imageUrl,
+              user: user,
             ),
             const SizedBox(height: 30),
             Container(

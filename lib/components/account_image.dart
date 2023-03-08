@@ -6,12 +6,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:qattah_project/models/user_model.dart';
 
 import '../constants/qcolors.dart';
 
 class AccountImage extends StatefulWidget {
-  const AccountImage({super.key, required this.imageUrl});
-  final String imageUrl;
+  const AccountImage({super.key, required this.user});
+  final UserModel user;
 
   @override
   State<AccountImage> createState() => _AccountImageState();
@@ -38,11 +39,11 @@ class _AccountImageState extends State<AccountImage> {
             width: 120,
             height: 120,
             clipBehavior: Clip.hardEdge,
-            child: widget.imageUrl == null
+            child: widget.user.imageUrl == ''
                 ? Container(
                     decoration: BoxDecoration(color: QLightGrey, borderRadius: BorderRadius.circular(100)),
                   )
-                : CachedNetworkImage(imageUrl: widget.imageUrl, width: 120, height: 130, fit: BoxFit.cover),
+                : CachedNetworkImage(imageUrl: widget.user.imageUrl, width: 120, height: 130, fit: BoxFit.cover),
           ),
           Positioned(
             left: 5,
@@ -69,9 +70,10 @@ class _AccountImageState extends State<AccountImage> {
     var file = File(pickedFile?.path ?? '');
     var snapshot = await firebaseStorage.ref().child('images/imageName').putFile(file);
     var downloadUrl = await snapshot.ref.getDownloadURL();
-    await FirebaseFirestore.instance
-        .collection('User')
-        .doc(FirebaseAuth.instance.currentUser?.uid)
-        .set({'imageUrl': downloadUrl});
+    await FirebaseFirestore.instance.collection('User').doc(FirebaseAuth.instance.currentUser?.uid).set({
+      'id': FirebaseAuth.instance.currentUser?.uid,
+      'name': widget.user.name,
+      'imageUrl': downloadUrl,
+    });
   }
 }
