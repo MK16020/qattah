@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/pages/general/account_page.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
@@ -28,7 +29,7 @@ class SettingsPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const AccountPage()),
                 );
               },
-              child: const Row(
+              child: Row(
                 children: [
                   Container(
                     decoration: BoxDecoration(
