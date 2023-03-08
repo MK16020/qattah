@@ -81,7 +81,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     flex: 4,
                     child: ListTile(
                       title: Text(user.name),
-                      subtitle: const Text('ex@gmail.com'),
+                      subtitle: const Text('Sara2@test.com'),
                       trailing: const Icon(Icons.keyboard_arrow_left_outlined),
                     ),
                   ),
@@ -127,7 +127,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         color: QLightPink,
                       ),
                       label: const Text(
-                        'Light Mode',
+                        'وضع النهار',
                         style: TextStyle(color: QMainPink),
                       ),
                     ),
@@ -144,7 +144,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         color: QLightPink,
                       ),
                       label: const Text(
-                        'Dark Mode',
+                        'الوضع الليلي',
                         style: TextStyle(color: QMainPink),
                       ),
                     ),
@@ -152,13 +152,16 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
               ],
             ),
+            const SizedBox(
+              height: 50,
+            ),
             TextButton(
               onPressed: () {
                 FirebaseAuth.instance.signOut();
               },
               child: const Text(
                 'تسجيل الخروج',
-                style: TextStyle(color: QLightestGreen),
+                style: TextStyle(color: QLightestGreen, fontSize: 20),
               ),
             ),
           ],

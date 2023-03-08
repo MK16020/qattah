@@ -10,24 +10,24 @@ class MemberListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // leading: IconButton(
-        //   onPressed: () {
-        //     Navigator.pop(context);
-        //   },
-        //   icon: const Icon(
-        //     Icons.people_outline_outlined,
-        //     color: QMainPink,
-        //   ),
-        // ),
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.search_sharp,
+            color: QDarkerGrey,
+          ),
+        ),
         title: const Text(
           'الأعضاء',
           style: TextStyle(color: QMainGreen, fontSize: 24),
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(
-              Icons.search_sharp,
+              Icons.arrow_forward_ios_rounded,
               color: QDarkerGrey,
             ),
           ),

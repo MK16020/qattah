@@ -41,15 +41,14 @@ class _AccountPageState extends State<AccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('الحساب', style: TextStyle(fontSize: 24)),
         actions: <Widget>[
           IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: const Icon(
-              Icons.arrow_forward_ios,
-            ),
+            icon: const Icon(Icons.arrow_forward_ios),
           ),
         ],
         elevation: 0.5,
@@ -70,15 +69,18 @@ class _AccountPageState extends State<AccountPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(width: 100),
-                  Text(user.name),
-                  const SizedBox(width: 100),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.mode_edit_outline_outlined,
-                      color: QMainPink,
-                    ),
+                  Text(
+                    user.name,
+                    style: const TextStyle(fontSize: 20),
                   ),
+                  const SizedBox(width: 100),
+                  // IconButton(
+                  //   onPressed: () {},
+                  //   icon: const Icon(
+                  //     Icons.mode_edit_outline_outlined,
+                  //     color: QMainPink,
+                  //   ),
+                  // ),
                 ],
               ),
             ),
