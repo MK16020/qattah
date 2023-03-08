@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
 import 'package:qattah_project/components/q_text_field.dart';
+import 'package:qattah_project/models/user_model.dart';
 import 'package:qattah_project/pages/general/navbar_page.dart';
 
 import '../../constants/qcolors.dart';
@@ -19,7 +21,19 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  createUser() {}
+  register() async {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(email: widget.email, password: widget.password);
+    var currentUser = FirebaseAuth.instance.currentUser;
+    if (currentUser != null) {
+      UserModel user = UserModel(id: currentUser.uid, name: nameController.text.trim(), imageUrl: 'images/profile.png');
+      print(FirebaseAuth.instance.currentUser?.uid);
+      FirebaseFirestore.instance.collection('User').doc(currentUser.uid).set(user.toMap());
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const NavbarPage()),
+      );
+    }
+  }
 
   @override
   void dispose() {
@@ -79,18 +93,7 @@ class _SecondRegisterPageState extends State<SecondRegisterPage> {
             const SizedBox(height: 40),
             QButton(
               title: 'تم',
-              onPressed: () async {
-                await FirebaseAuth.instance
-                    .createUserWithEmailAndPassword(email: widget.email, password: widget.password);
-                if (FirebaseAuth.instance.currentUser != null) {
-                  print(FirebaseAuth.instance.currentUser?.uid);
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const NavbarPage()),
-                  );
-                }
-                setState(() {});
-              },
+              onPressed: register(),
             ),
             const SizedBox(height: 60),
             Center(

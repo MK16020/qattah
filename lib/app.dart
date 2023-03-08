@@ -39,7 +39,6 @@ class AppState extends State<App> {
         userList.add(userFromData);
       }
       UserModel.users = userList;
-
       setState(() {});
     });
   }

@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/components/q_button.dart';
@@ -55,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
     if (errorMessage.isNotEmpty) {
       return Future.error(errorMessage);
     }
+    user!.uid;
 
     return user!.uid;
   }
@@ -133,6 +136,7 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () {
                 signIn();
                 if (errorMessage.isNotEmpty) {
+                  
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
