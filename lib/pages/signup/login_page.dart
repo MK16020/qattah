@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
   String errorMessage = '';
   Future signIn() async {
     User? user;
-    var userId;
+    String userId;
     try {
       UserCredential result = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text.trim(),
@@ -58,8 +58,12 @@ class _LoginPageState extends State<LoginPage> {
     if (errorMessage.isNotEmpty) {
       return Future.error(errorMessage);
     }
+<<<<<<< Updated upstream
 
     return FirebaseFirestore.instance.collection('User').doc(userId).get();
+=======
+  return FirebaseFirestore.instance.collection('User').doc().get();
+>>>>>>> Stashed changes
   }
 
   @override
@@ -135,7 +139,11 @@ class _LoginPageState extends State<LoginPage> {
               title: 'تسجيل الدخول',
               onPressed: () {
                 signIn();
+<<<<<<< Updated upstream
                 if (errorMessage.isNotEmpty) {
+=======
+                if (errorMessage.isEmpty) {
+>>>>>>> Stashed changes
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
