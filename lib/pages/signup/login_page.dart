@@ -58,12 +58,7 @@ class _LoginPageState extends State<LoginPage> {
     if (errorMessage.isNotEmpty) {
       return Future.error(errorMessage);
     }
-<<<<<<< Updated upstream
-
-    return FirebaseFirestore.instance.collection('User').doc(userId).get();
-=======
-  return FirebaseFirestore.instance.collection('User').doc().get();
->>>>>>> Stashed changes
+    return FirebaseFirestore.instance.collection('User').doc().get();
   }
 
   @override
@@ -139,11 +134,7 @@ class _LoginPageState extends State<LoginPage> {
               title: 'تسجيل الدخول',
               onPressed: () {
                 signIn();
-<<<<<<< Updated upstream
-                if (errorMessage.isNotEmpty) {
-=======
                 if (errorMessage.isEmpty) {
->>>>>>> Stashed changes
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
