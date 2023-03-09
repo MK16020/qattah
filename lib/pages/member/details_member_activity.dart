@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:qattah_project/constants/qcolors.dart';
 
 class DetailsMemberActivity extends StatelessWidget {
-  const DetailsMemberActivity({super.key});
+  const DetailsMemberActivity({super.key, required this.name});
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +54,8 @@ class DetailsMemberActivity extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'مريم',
-                  style: TextStyle(fontSize: 32),
+                  name,
+                  style: const TextStyle(fontSize: 32),
                 ),
               ],
             ),
@@ -62,11 +63,11 @@ class DetailsMemberActivity extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'انت تطلب مريم ',
-                  style: TextStyle(fontSize: 16),
+                  'انت تطلب $name ',
+                  style: const TextStyle(fontSize: 16),
                 ),
-                Text(
-                  '25 SAR',
+                const Text(
+                  '0 SAR',
                   style: TextStyle(fontSize: 16, color: QMainGreen),
                 ),
               ],
@@ -118,9 +119,9 @@ class DetailsMemberActivity extends StatelessWidget {
               height: 12,
             ),
             Padding(
-              padding: EdgeInsets.all(24.0),
+              padding: const EdgeInsets.all(24.0),
               child: Row(
-                children: [
+                children: const [
                   Text(
                     'مارس ٢٠٢٣',
                   ),
@@ -132,7 +133,7 @@ class DetailsMemberActivity extends StatelessWidget {
               child: Row(
                 children: [
                   const Text(
-                    'مارس - ٧',
+                    'مارس - ٩',
                     style: TextStyle(color: Color.fromARGB(255, 136, 136, 136)),
                   ),
                   const SizedBox(
@@ -152,13 +153,13 @@ class DetailsMemberActivity extends StatelessWidget {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
-                        'تجربة',
+                        'لا يوجد قطه حتى الآن',
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'انت دفعت 50.00 SAR',
+                        'انت دفعت 0.00 SAR',
                         style: TextStyle(fontSize: 14, color: Colors.grey),
                       ),
                     ],
@@ -169,13 +170,13 @@ class DetailsMemberActivity extends StatelessWidget {
                   Column(
                     //crossAxisAlignment: CrossAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
                         'تطلبه',
                         style: TextStyle(fontSize: 14),
                       ),
                       Text(
-                        '25.00 SAR',
+                        '٠0.00 SAR',
                         style: TextStyle(fontSize: 14, color: Colors.grey),
                       ),
                     ],
