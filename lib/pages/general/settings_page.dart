@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/models/user_model.dart';
 import 'package:qattah_project/pages/general/account_page.dart';
+import 'package:qattah_project/pages/welcome/welcome_page.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
 
 import '../../components/q_account_option.dart';
@@ -158,6 +159,7 @@ class _SettingsPageState extends State<SettingsPage> {
             TextButton(
               onPressed: () {
                 FirebaseAuth.instance.signOut();
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const WelcomePage()));
               },
               child: const Text(
                 'تسجيل الخروج',
