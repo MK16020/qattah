@@ -91,6 +91,8 @@ class _AddMemberPageState extends State<AddMemberPage> {
                         String id = const Uuid().v4();
                         UserModel user = UserModel(id: id, name: nameController.text, imageUrl: 'images/profile.png');
                         await FirebaseFirestore.instance.collection('User').doc(id).set(user.toMap());
+                        UserModel.users.add(user);
+                        setState(() {});
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const MemberListPage()));
                       },
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(QMainPink)),
