@@ -81,7 +81,8 @@ class GroupDetailPage extends StatelessWidget {
                   width: 120.0,
                   height: 48.0,
                   child: const Center(
-                      child: Text('التسوية المالية', style: TextStyle(fontSize: 16.0, color: Colors.white))),
+                    child: Text('التسوية المالية', style: TextStyle(fontSize: 16.0, color: Colors.white)),
+                  ),
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -126,32 +127,32 @@ class GroupDetailPage extends StatelessWidget {
                       const SizedBox(
                         width: 16,
                       ),
-                      const Column(
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: const [
                           Text(
                             'ريناد',
                             style: TextStyle(fontSize: 16),
                           ),
                           Text(
                             ' دفع 50.00 SAR',
-                            style: TextStyle(fontSize: 14, color: Colors.grey),
+                            style: TextStyle(color: Colors.grey, fontSize: 14),
                           ),
                         ],
                       ),
                       const SizedBox(
                         width: 32,
                       ),
-                      const Column(
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: const [
                           Text(
                             'تطلبهم',
                             style: TextStyle(fontSize: 14),
                           ),
                           Text(
                             '25.00 SAR',
-                            style: TextStyle(fontSize: 14, color: Colors.grey),
+                            style: TextStyle(color: Colors.grey, fontSize: 14),
                           ),
                         ],
                       ),
