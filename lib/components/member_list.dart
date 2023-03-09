@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/models/user_model.dart';
+import 'package:qattah_project/pages/member/add_member_page.dart';
 
-import '../../components/member_card.dart';
-import '../../constants/qcolors.dart';
+import '../constants/qcolors.dart';
+import 'member_card.dart';
 
-class MemberListPage extends StatelessWidget {
-  const MemberListPage({super.key});
+class MemberList extends StatelessWidget {
+  const MemberList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AddMemberPage()),
+            );
+          },
           icon: const Icon(
-            Icons.search_sharp,
+            Icons.person_add,
             color: QDarkerGrey,
           ),
         ),

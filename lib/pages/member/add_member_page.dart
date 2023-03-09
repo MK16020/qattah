@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/constants/qcolors.dart';
-import 'package:qattah_project/pages/member/member_list_page.dart';
+import 'package:qattah_project/components/member_list.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../models/user_model.dart';
@@ -99,7 +99,7 @@ class _AddMemberPageState extends State<AddMemberPage> {
                         await FirebaseFirestore.instance.collection('User').doc(id).set(user.toMap());
                         UserModel.users.add(user);
                         setState(() {});
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const MemberListPage()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const MemberList()));
                       },
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(QMainPink)),
                       child: const Text('إضافة', style: TextStyle(color: QMainGreen)),
