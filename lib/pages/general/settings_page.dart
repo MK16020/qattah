@@ -82,7 +82,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     flex: 4,
                     child: ListTile(
                       title: Text(user.name),
-                      subtitle: const Text('Sara2@test.com'),
+                      // subtitle: const Text('Sara2@test.com'),
                       trailing: const Icon(Icons.keyboard_arrow_left_outlined),
                     ),
                   ),
