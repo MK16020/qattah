@@ -34,7 +34,7 @@ class MemberCard extends StatelessWidget {
             ),
             InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DetailsMemberActivity()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsMemberActivity(name: name)));
                 },
                 child: const Icon(Icons.keyboard_arrow_left_outlined)),
           ],
