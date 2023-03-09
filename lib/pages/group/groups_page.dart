@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qattah_project/components/full_groups.dart';
-import 'package:qattah_project/models/group_model.dart';
 
-import '../../components/empty_group.dart';
 import '../../constants/qcolors.dart';
 import 'add_group_page.dart';
 
@@ -12,7 +9,10 @@ class GroupsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
+      appBar: AppBar(
+        leading: const Text(''),
+        title: const Text('المجموعات', style: TextStyle(fontSize: 24)),
+      ),
       body: Directionality(
         textDirection: TextDirection.rtl,
         child: ListView(
@@ -54,7 +54,7 @@ class GroupsPage extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const AddGroupPage()),
                       );
                     },
-                    child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                    child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: const [
                       Text('إبدأ مجموعة', style: TextStyle(color: QMainPink, fontSize: 20)),
                       Icon(Icons.group_add_outlined, color: QMainPink),
                     ]),
