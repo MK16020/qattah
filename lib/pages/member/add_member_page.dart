@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/constants/qcolors.dart';
 import 'package:qattah_project/pages/member/member_list_page.dart';
+import 'package:uuid/uuid.dart';
+
+import '../../models/user_model.dart';
 
 class AddMemberPage extends StatelessWidget {
   const AddMemberPage({super.key});
@@ -70,6 +74,9 @@ class AddMemberPage extends StatelessWidget {
                     height: 40,
                     child: ElevatedButton(
                       onPressed: () {
+                        String id = Uuid.NAMESPACE_OID;
+                        UserModel user = UserModel(id: id, name: 'خالد', imageUrl: 'images/profile.png');
+                        FirebaseFirestore.instance.collection('User').doc(id).set(user.toMap());
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const MemberListPage()));
                       },
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(QMainPink)),
