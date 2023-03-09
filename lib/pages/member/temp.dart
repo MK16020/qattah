@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qattah_project/pages/member/add_member_page.dart';
+import 'package:qattah_project/pages/activity/add_qattah_page.dart';
 
 class Temp extends StatelessWidget {
   const Temp({super.key});
@@ -11,7 +11,7 @@ class Temp extends StatelessWidget {
       bottomSheet: BottomSheet(
         onClosing: () {},
         builder: (BuildContext context) {
-          return const AddMemberPage();
+          return const AddQattahPage();
         },
       ),
     );

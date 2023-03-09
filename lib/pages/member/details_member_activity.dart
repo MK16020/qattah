@@ -49,7 +49,7 @@ class DetailsMemberActivity extends StatelessWidget {
                 ),
               ],
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -58,7 +58,7 @@ class DetailsMemberActivity extends StatelessWidget {
                 ),
               ],
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -117,7 +117,7 @@ class DetailsMemberActivity extends StatelessWidget {
             const SizedBox(
               height: 12,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(24.0),
               child: Row(
                 children: [
@@ -150,7 +150,7 @@ class DetailsMemberActivity extends StatelessWidget {
                   const SizedBox(
                     width: 16,
                   ),
-                  const Column(
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -166,7 +166,7 @@ class DetailsMemberActivity extends StatelessWidget {
                   const SizedBox(
                     width: 32,
                   ),
-                  const Column(
+                  Column(
                     //crossAxisAlignment: CrossAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

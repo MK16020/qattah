@@ -122,10 +122,10 @@ class _AddGroupPageState extends State<AddGroupPage> {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(36.0),
+            Padding(
+              padding: const EdgeInsets.all(36.0),
               child: Row(
-                children: [
+                children: const [
                   Text(
                     'النوع',
                     style: TextStyle(fontSize: 16),

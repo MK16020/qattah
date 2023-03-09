@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qattah_project/pages/activity/add_activity_page.dart';
 
 import '../../constants/qcolors.dart';
 
@@ -10,30 +11,63 @@ class AddQattahPage extends StatefulWidget {
 }
 
 class _AddQattahPageState extends State<AddQattahPage> {
-  String dropdownvalue = 'أنت دفعت، تقسم بالتساوي';
+  String dropdownvalue = 'أنت دفعت المبلغ';
   var items = [
-    'أنت دفعت، تقسم بالتساوي',
-    'أنت دفعت القيمة كاملة',
-    'ريما دفع، تقسم بالتساوي',
-    'ريما دفع القيمة كاملة',
+    'أنت دفعت المبلغ',
+    'أنت أعرت المبلغ',
+    'هو دفع المبلغ',
+    'هو أعارك المبلغ',
   ];
+  @override
+  Future<void> _showSimpleDialog() async {
+    await showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return Directionality(
+          textDirection: TextDirection.rtl,
+          child: SimpleDialog(
+            title: const Text('إضافة ملاحظة'),
+            children: <Widget>[
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: TextField(
+                  decoration: InputDecoration(hintText: 'أضف ملاحضتك هنا', hintStyle: TextStyle(color: QLightGrey)),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: TextButton(
-          onPressed: () {},
-          child: const Text('حفظ', style: TextStyle()),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios,
+          ),
         ),
         title: const Text('اضافة حساب', style: TextStyle(fontSize: 24)),
         actions: [
-          IconButton(
+          TextButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddActivityPage()),
+              );
             },
-            icon: const Icon(
-              Icons.arrow_forward_ios,
-            ),
+            child: const Text('حفظ', style: TextStyle(color: QDarkerGrey)),
           ),
         ],
         elevation: 0.5,
@@ -118,8 +152,7 @@ class _AddQattahPageState extends State<AddQattahPage> {
               const Spacer(),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Container(
-                  decoration: const BoxDecoration(color: Colors.white),
+                child: SizedBox(
                   height: 40,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -139,7 +172,11 @@ class _AddQattahPageState extends State<AddQattahPage> {
                         ),
                         Text('بدون مجموعة'),
                       ]),
-                      const Icon(Icons.edit_outlined),
+                      IconButton(
+                        onPressed: _showSimpleDialog,
+                        icon: const Icon(Icons.edit_outlined),
+                      ),
+                      // const Icon(Icons.edit_outlined),
                     ],
                   ),
                 ),

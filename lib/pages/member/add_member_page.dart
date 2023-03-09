@@ -11,19 +11,19 @@ class AddMemberPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text('إضافة صديق', style: TextStyle(fontSize: 24)),
-        actions: [
-          TextButton(
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => const AddQattahPage()),
-              // );
-            },
-            child: const Text(
-              'حفظ',
-            ),
-          ),
-        ],
+        // actions: [
+        //   TextButton(
+        //     onPressed: () {
+        //       // Navigator.push(
+        //       //   context,
+        //       //   MaterialPageRoute(builder: (context) => const AddQattahPage()),
+        //       // );
+        //     },
+        //     child: const Text(
+        //       'حفظ',
+        //     ),
+        //   ),
+        // ],
         centerTitle: true,
       ),
       body: Directionality(
