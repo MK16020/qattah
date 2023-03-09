@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:qattah_project/models/group_model.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../constants/qcolors.dart';
 
@@ -11,7 +14,7 @@ class AddGroupPage extends StatefulWidget {
 }
 
 class _AddGroupPageState extends State<AddGroupPage> {
-  TextEditingController name = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   int selected = 4;
   var types = [
     GroupType(
@@ -38,11 +41,26 @@ class _AddGroupPageState extends State<AddGroupPage> {
   ];
 
   @override
+  void dispose() {
+    nameController.dispose();
+    super.dispose();
+  }
+
+  String id = '${const Uuid()}';
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            GroupModel group = GroupModel(
+              id: id,
+              name: nameController.text.trim(),
+              type: types[selected].name,
+              imageUrl: 'images/group_image.png',
+            );
+            FirebaseFirestore.instance.collection('Group').doc(id).set(group.toMap());
+          },
           child: const Text(
             'حفظ',
             style: TextStyle(color: QMainGreen),
@@ -94,9 +112,11 @@ class _AddGroupPageState extends State<AddGroupPage> {
                   const SizedBox(
                     width: 15,
                   ),
-                  const Expanded(
+                  Expanded(
                     child: TextField(
-                      decoration: InputDecoration(hintText: 'اسم المجموعة', hintStyle: TextStyle(color: QLightGrey)),
+                      controller: nameController,
+                      decoration:
+                          const InputDecoration(hintText: 'اسم المجموعة', hintStyle: TextStyle(color: QLightGrey)),
                     ),
                   ),
                 ],
