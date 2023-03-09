@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/models/group_model.dart';
-import 'package:qattah_project/pages/group/add_group_page.dart';
 
-import '../../constants/qcolors.dart';
+import '../constants/qcolors.dart';
 
-class FullGroupsPage extends StatelessWidget {
-  const FullGroupsPage({super.key});
+class FullGroups extends StatefulWidget {
+  const FullGroups({super.key});
 
+  @override
+  State<FullGroups> createState() => _FullGroupsPageState();
+}
+
+class _FullGroupsPageState extends State<FullGroups> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const AddGroupPage(),
-              ),
-            );
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) => const AddGroupPage(),
+            //   ),
+            // );
+            setState(() {});
           },
           icon: const Icon(
             Icons.group_add,
@@ -47,33 +52,35 @@ class FullGroupsPage extends StatelessWidget {
             for (final group in GroupModel.groups) ...[
               Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: Text(group.imageUrl),
-                // child: Row(
-                //   children: [
-                //     const SizedBox(
-                //       width: 8,
-                //     ),
-                //     Container(
-                //       decoration: const BoxDecoration(
-                //         border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: 0.5)),
-                //         shape: BoxShape.circle,
-                //       ),
-                //       width: 48,
-                //       height: 48,
-                //       child: const Icon(Icons.pages, size: 40, color: Color(0XFF4C43BA)),
-                //     ),
-                //     const SizedBox(
-                //       width: 16,
-                //     ),
-                //     Text(group.name, style: const TextStyle(color: Colors.black, fontSize: 16)),
-                //     const Spacer(),
-                //     const Text('خالية من الحسابات', style: TextStyle(color: QLightGrey, fontSize: 12)),
-                //     const Icon(
-                //       Icons.arrow_forward_ios,
-                //       color: QLightGrey,
-                //     ),
-                //   ],
-                // ),
+                child: Row(
+                  children: [
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Container(
+                      decoration: const BoxDecoration(
+                        border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: 0.5)),
+                        shape: BoxShape.circle,
+                      ),
+                      width: 48,
+                      height: 48,
+                      child: Image(
+                        image: AssetImage(group.imageUrl),
+                        fit: BoxFit.scaleDown,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 16,
+                    ),
+                    Text(group.name, style: const TextStyle(color: Colors.black, fontSize: 16)),
+                    const Spacer(),
+                    const Text('خالية من الحسابات', style: TextStyle(color: QLightGrey, fontSize: 12)),
+                    const Icon(
+                      Icons.arrow_forward_ios,
+                      color: QLightGrey,
+                    ),
+                  ],
+                ),
               ),
               const Divider(
                 thickness: 1,

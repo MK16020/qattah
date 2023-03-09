@@ -9,7 +9,6 @@ import 'package:theme_mode_builder/theme_mode_builder.dart';
 
 import 'components/dark_theme.dart';
 import 'components/light_theme.dart';
-import 'pages/group/full_groups_page.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -53,6 +52,7 @@ class AppState extends State<App> {
         groupList.add(groupFromData);
       }
       GroupModel.groups = groupList;
+      print(GroupModel.groups.length);
 
       setState(() {});
     });
@@ -81,7 +81,7 @@ class AppState extends State<App> {
           builder: (context, snapshot) {
             return snapshot.hasData
                 ? const Scaffold(body: Directionality(textDirection: TextDirection.rtl, child: NavbarPage()))
-                : const FullGroupsPage();
+                : const NavbarPage();
           },
         ),
         theme: lightThemeData(context),
