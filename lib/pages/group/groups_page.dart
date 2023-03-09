@@ -44,7 +44,6 @@ class GroupsPage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    // backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                     padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
                   ),
@@ -55,7 +54,7 @@ class GroupsPage extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const AddGroupPage()),
                       );
                     },
-                    child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                    child: const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                       Text('إبدأ مجموعة', style: TextStyle(color: QMainPink, fontSize: 20)),
                       Icon(Icons.group_add_outlined, color: QMainPink),
                     ]),

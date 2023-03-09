@@ -46,7 +46,7 @@ class _AddGroupPageState extends State<AddGroupPage> {
     super.dispose();
   }
 
-  String id = '${const Uuid()}';
+  String id = Uuid.NAMESPACE_OID;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

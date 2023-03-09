@@ -6,6 +6,7 @@ class DetailsMemberActivity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color color = Colors.grey.withOpacity(0.5);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -48,18 +49,18 @@ class DetailsMemberActivity extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
                   'مريم',
                   style: TextStyle(fontSize: 32),
                 ),
               ],
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
                   'انت تطلب مريم ',
                   style: TextStyle(fontSize: 16),
@@ -82,7 +83,7 @@ class DetailsMemberActivity extends StatelessWidget {
                     borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: color,
                         offset: const Offset(0, 3),
                         blurRadius: 7,
                         spreadRadius: 1,
@@ -100,7 +101,7 @@ class DetailsMemberActivity extends StatelessWidget {
                     borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: color,
                         offset: const Offset(0, 3),
                         blurRadius: 7,
                         spreadRadius: 1,
@@ -116,10 +117,10 @@ class DetailsMemberActivity extends StatelessWidget {
             const SizedBox(
               height: 12,
             ),
-            Padding(
-              padding: const EdgeInsets.all(24.0),
+            const Padding(
+              padding: EdgeInsets.all(24.0),
               child: Row(
-                children: const [
+                children: [
                   Text(
                     'مارس ٢٠٢٣',
                   ),
@@ -149,9 +150,9 @@ class DetailsMemberActivity extends StatelessWidget {
                   const SizedBox(
                     width: 16,
                   ),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
                         'تجربة',
                         style: TextStyle(fontSize: 16),
@@ -165,10 +166,10 @@ class DetailsMemberActivity extends StatelessWidget {
                   const SizedBox(
                     width: 32,
                   ),
-                  Column(
+                  const Column(
                     //crossAxisAlignment: CrossAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
                         'تطلبه',
                         style: TextStyle(fontSize: 14),

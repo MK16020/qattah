@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:qattah_project/models/group_model.dart';
+import 'package:qattah_project/pages/group/add_group_page.dart';
 
 import '../../constants/qcolors.dart';
 
@@ -9,9 +11,19 @@ class FullGroupsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
-          Icons.group_add,
-          size: 32,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const AddGroupPage(),
+              ),
+            );
+          },
+          icon: const Icon(
+            Icons.group_add,
+            size: 32,
+          ),
         ),
         title: const Text('المجموعات', style: TextStyle(fontSize: 24)),
         actions: const [
@@ -25,76 +37,82 @@ class FullGroupsPage extends StatelessWidget {
         ],
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 8,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              children: [
-                const SizedBox(
-                  width: 8,
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                    border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: .5)),
-                    shape: BoxShape.circle,
-                  ),
-                  width: 48,
-                  height: 48,
-                  child: const Icon(Icons.pages, size: 40, color: Color(0XFF4C43BA)),
-                ),
-                const SizedBox(
-                  width: 16,
-                ),
-                const Text('حفل التخرج', style: TextStyle(color: Colors.black, fontSize: 16)),
-                const Spacer(),
-                const Text('خالية من الحسابات', style: TextStyle(color: QLightGrey, fontSize: 12)),
-                const Icon(
-                  Icons.arrow_forward_ios,
-                  color: QLightGrey,
-                ),
-              ],
+      body: Directionality(
+        textDirection: TextDirection.rtl,
+        child: ListView(
+          children: [
+            const SizedBox(
+              height: 8,
             ),
-          ),
-          const Divider(
-            thickness: 1,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              children: [
-                const SizedBox(
-                  width: 8,
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                    border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: .5)),
-                    shape: BoxShape.circle,
+            for (final group in GroupModel.groups) ...[
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(group.imageUrl),
+                // child: Row(
+                //   children: [
+                //     const SizedBox(
+                //       width: 8,
+                //     ),
+                //     Container(
+                //       decoration: const BoxDecoration(
+                //         border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: 0.5)),
+                //         shape: BoxShape.circle,
+                //       ),
+                //       width: 48,
+                //       height: 48,
+                //       child: const Icon(Icons.pages, size: 40, color: Color(0XFF4C43BA)),
+                //     ),
+                //     const SizedBox(
+                //       width: 16,
+                //     ),
+                //     Text(group.name, style: const TextStyle(color: Colors.black, fontSize: 16)),
+                //     const Spacer(),
+                //     const Text('خالية من الحسابات', style: TextStyle(color: QLightGrey, fontSize: 12)),
+                //     const Icon(
+                //       Icons.arrow_forward_ios,
+                //       color: QLightGrey,
+                //     ),
+                //   ],
+                // ),
+              ),
+              const Divider(
+                thickness: 1,
+              ),
+            ],
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: [
+                  const SizedBox(
+                    width: 8,
                   ),
-                  width: 48,
-                  height: 48,
-                  child: const Icon(Icons.home, size: 40, color: Color.fromARGB(255, 67, 153, 70)),
-                ),
-                const SizedBox(
-                  width: 16,
-                ),
-                const Text('البيت', style: TextStyle(color: Colors.black, fontSize: 16)),
-                const Spacer(),
-                const Text('خالية من الحسابات', style: TextStyle(color: QLightGrey, fontSize: 12)),
-                const Icon(
-                  Icons.arrow_forward_ios,
-                  color: QLightGrey,
-                ),
-              ],
+                  Container(
+                    decoration: const BoxDecoration(
+                      border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: .5)),
+                      shape: BoxShape.circle,
+                    ),
+                    width: 48,
+                    height: 48,
+                    child: const Icon(Icons.home, size: 40, color: Color.fromARGB(255, 67, 153, 70)),
+                  ),
+                  const SizedBox(
+                    width: 16,
+                  ),
+                  const Text('البيت', style: TextStyle(color: Colors.black, fontSize: 16)),
+                  const Spacer(),
+                  const Text('خالية من الحسابات', style: TextStyle(color: QLightGrey, fontSize: 12)),
+                  const Icon(
+                    Icons.arrow_forward_ios,
+                    color: QLightGrey,
+                  ),
+                ],
+              ),
             ),
-          ),
-          const Divider(
-            thickness: 1,
-          ),
-        ],
+            const Divider(
+              thickness: 1,
+            ),
+          ],
+        ),
       ),
     );
   }
