@@ -31,7 +31,7 @@ class _NavbarPageState extends State<NavbarPage> {
         textDirection: TextDirection.rtl,
         child: BottomNavigationBar(
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'الأعضاء'),
+            BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'الأصدقاء'),
             BottomNavigationBarItem(icon: Icon(Icons.people_alt_outlined), label: 'المجموعات'),
             BottomNavigationBarItem(icon: Icon(Icons.add_box_rounded), label: ''),
             BottomNavigationBarItem(icon: Icon(Icons.insert_chart_outlined_sharp), label: 'النشاط'),
