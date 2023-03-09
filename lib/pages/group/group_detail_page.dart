@@ -55,7 +55,7 @@ class GroupDetailPage extends StatelessWidget {
               children: [
                 Text(
                   name,
-                  style: TextStyle(fontSize: 32),
+                  style: const TextStyle(fontSize: 32),
                 ),
               ],
             ),
@@ -126,7 +126,7 @@ class GroupDetailPage extends StatelessWidget {
                       const SizedBox(
                         width: 16,
                       ),
-                      Column(
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -142,7 +142,7 @@ class GroupDetailPage extends StatelessWidget {
                       const SizedBox(
                         width: 32,
                       ),
-                      Column(
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -164,7 +164,6 @@ class GroupDetailPage extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: Colors.white,
     );
   }
 }

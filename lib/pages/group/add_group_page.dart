@@ -46,7 +46,7 @@ class _AddGroupPageState extends State<AddGroupPage> {
     super.dispose();
   }
 
-  String id = Uuid.NAMESPACE_OID;
+  String id = const Uuid().v4();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +61,7 @@ class _AddGroupPageState extends State<AddGroupPage> {
             );
             GroupModel.groups.add(group);
             FirebaseFirestore.instance.collection('Group').doc(id).set(group.toMap());
+            Navigator.pop(context);
           },
           child: const Text(
             'حفظ',
