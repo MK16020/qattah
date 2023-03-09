@@ -50,7 +50,7 @@ class GroupDetailPage extends StatelessWidget {
                 ),
               ],
             ),
-             Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -126,7 +126,7 @@ class GroupDetailPage extends StatelessWidget {
                       const SizedBox(
                         width: 16,
                       ),
-                      const Column(
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -142,7 +142,7 @@ class GroupDetailPage extends StatelessWidget {
                       const SizedBox(
                         width: 32,
                       ),
-                      const Column(
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
