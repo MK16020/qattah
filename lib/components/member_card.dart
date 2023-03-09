@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qattah_project/pages/member/details_member_activity.dart';
 
 import '../constants/qcolors.dart';
 
@@ -31,7 +32,11 @@ class MemberCard extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(Icons.keyboard_arrow_left_outlined),
+            InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DetailsMemberActivity()));
+                },
+                child: const Icon(Icons.keyboard_arrow_left_outlined)),
           ],
         ),
       ),
