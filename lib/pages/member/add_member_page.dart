@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:qattah_project/constants/qcolors.dart';
 import 'package:qattah_project/pages/member/member_list_page.dart';
+import 'package:qattah_project/pages/member/members_page.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../models/user_model.dart';
@@ -28,19 +29,25 @@ class _AddMemberPageState extends State<AddMemberPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text('إضافة صديق', style: TextStyle(fontSize: 24)),
-        // actions: [
-        //   TextButton(
-        //     onPressed: () {
-        //       // Navigator.push(
-        //       //   context,
-        //       //   MaterialPageRoute(builder: (context) => const AddQattahPage()),
-        //       // );
-        //     },
-        //     child: const Text(
-        //       'حفظ',
-        //     ),
-        //   ),
-        // ],
+        actions: [
+          TextButton(
+            onPressed: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => const AddQattahPage()),
+              // );
+            },
+            child: InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const MembersPage()));
+              },
+              child: const Icon(
+                Icons.arrow_forward_ios,
+                color: QMainGreen,
+              ),
+            ),
+          ),
+        ],
         centerTitle: true,
       ),
       body: Directionality(
