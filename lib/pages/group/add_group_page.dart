@@ -148,9 +148,8 @@ class _AddGroupPageState extends State<AddGroupPage> {
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                         decoration: BoxDecoration(
-                          color: (selected == i) ? QLightGrey : null,
                           border: Border.fromBorderSide(
-                            BorderSide(color: (selected == i) ? QBlack : Colors.grey, width: 0.5),
+                            BorderSide(color: (selected == i) ? QMainGreen : QBlack, width: (selected == i) ? 2 : 0.5),
                           ),
                           borderRadius: const BorderRadius.all(Radius.circular(24)),
                         ),
