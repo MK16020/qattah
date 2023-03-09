@@ -27,7 +27,7 @@ class MemberCard extends StatelessWidget {
               child: Column(
                 children: const [
                   Text('يدين لك: '),
-                  Text('50.00 SAR'),
+                  Text('0.00 SAR'),
                 ],
               ),
             ),
