@@ -13,13 +13,7 @@ class UserModel {
     this.friends,
   });
   factory UserModel.fromMap(Map<String, dynamic> map) {
-    return UserModel(
-      id: map['id'],
-      name: map['name'],
-      phone: map['phone'],
-      imageUrl: map['imageUrl'],
-      friends: map['friends'],
-    );
+    return UserModel(id: map['id'], name: map['name'], imageUrl: map['imageUrl']);
   }
 
   Map<String, dynamic> toMap() {

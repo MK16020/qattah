@@ -3,6 +3,7 @@ import 'package:qattah_project/models/group_model.dart';
 import 'package:qattah_project/pages/group/group_detail_page.dart';
 
 import '../constants/qcolors.dart';
+import '../pages/group/add_group_page.dart';
 
 class FullGroups extends StatefulWidget {
   const FullGroups({super.key});
@@ -18,12 +19,12 @@ class _FullGroupsPageState extends State<FullGroups> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => const AddGroupPage(),
-            //   ),
-            // );
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const AddGroupPage(),
+              ),
+            );
             setState(() {});
           },
           icon: const Icon(
