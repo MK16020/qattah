@@ -5,7 +5,6 @@ import 'package:qattah_project/pages/member/member_list_page.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../models/user_model.dart';
-import '../general/navbar_page.dart';
 
 class AddMemberPage extends StatefulWidget {
   const AddMemberPage({super.key});
@@ -39,7 +38,7 @@ class _AddMemberPageState extends State<AddMemberPage> {
             },
             child: InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const NavbarPage()));
+                Navigator.pop(context);
               },
               child: const Icon(
                 Icons.arrow_forward_ios,

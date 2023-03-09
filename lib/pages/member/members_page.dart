@@ -32,7 +32,7 @@ class MembersPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 64),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const AddMemberPage()),
                     );
