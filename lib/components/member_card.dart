@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import '../constants/qcolors.dart';
 
 class MemberCard extends StatelessWidget {
-  const MemberCard({
-    super.key,
-  });
+  const MemberCard({super.key, required this.name});
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class MemberCard extends StatelessWidget {
               radius: 20,
             ),
             const SizedBox(width: 10),
-            const Expanded(flex: 2, child: Text('رناد')),
+            Expanded(flex: 2, child: Text(name)),
             Expanded(
               flex: 2,
               child: Column(

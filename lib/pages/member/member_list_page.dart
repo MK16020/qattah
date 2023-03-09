@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qattah_project/models/user_model.dart';
 
 import '../../components/member_card.dart';
 import '../../constants/qcolors.dart';
@@ -39,8 +40,8 @@ class MemberListPage extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            for (int i = 0; i < 4; i++) ...[
-              const MemberCard(),
+            for (final user in UserModel.users) ...[
+              MemberCard(name: user.name),
               const SizedBox(height: 10),
             ],
           ],

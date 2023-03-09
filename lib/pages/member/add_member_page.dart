@@ -6,8 +6,21 @@ import 'package:uuid/uuid.dart';
 
 import '../../models/user_model.dart';
 
-class AddMemberPage extends StatelessWidget {
+class AddMemberPage extends StatefulWidget {
   const AddMemberPage({super.key});
+
+  @override
+  State<AddMemberPage> createState() => _AddMemberPageState();
+}
+
+class _AddMemberPageState extends State<AddMemberPage> {
+  TextEditingController nameController = TextEditingController();
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +63,9 @@ class AddMemberPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const TextField(
-                  decoration: InputDecoration(
+                TextField(
+                  controller: nameController,
+                  decoration: const InputDecoration(
                     hintText: '',
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: QLightGreen),
@@ -73,10 +87,10 @@ class AddMemberPage extends StatelessWidget {
                     width: 120,
                     height: 40,
                     child: ElevatedButton(
-                      onPressed: () {
-                        String id = Uuid.NAMESPACE_OID;
-                        UserModel user = UserModel(id: id, name: 'خالد', imageUrl: 'images/profile.png');
-                        FirebaseFirestore.instance.collection('User').doc(id).set(user.toMap());
+                      onPressed: () async {
+                        String id = const Uuid().v4();
+                        UserModel user = UserModel(id: id, name: nameController.text, imageUrl: 'images/profile.png');
+                        await FirebaseFirestore.instance.collection('User').doc(id).set(user.toMap());
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const MemberListPage()));
                       },
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(QMainPink)),
