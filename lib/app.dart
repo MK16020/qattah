@@ -5,6 +5,7 @@ import 'package:qattah_project/models/expense_model.dart';
 import 'package:qattah_project/models/group_model.dart';
 import 'package:qattah_project/models/user_model.dart';
 import 'package:qattah_project/pages/general/navbar_page.dart';
+import 'package:qattah_project/pages/welcome/welcome_page.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
 
 import 'components/dark_theme.dart';
@@ -52,7 +53,6 @@ class AppState extends State<App> {
         groupList.add(groupFromData);
       }
       GroupModel.groups = groupList;
-      print(GroupModel.groups.length);
 
       setState(() {});
     });
@@ -81,7 +81,7 @@ class AppState extends State<App> {
           builder: (context, snapshot) {
             return snapshot.hasData
                 ? const Scaffold(body: Directionality(textDirection: TextDirection.rtl, child: NavbarPage()))
-                : const NavbarPage();
+                : const WelcomePage();
           },
         ),
         theme: lightThemeData(context),

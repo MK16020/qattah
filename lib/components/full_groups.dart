@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/models/group_model.dart';
+import 'package:qattah_project/pages/group/group_detail_page.dart';
 
 import '../constants/qcolors.dart';
 
@@ -50,36 +51,48 @@ class _FullGroupsPageState extends State<FullGroups> {
               height: 8,
             ),
             for (final group in GroupModel.groups) ...[
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  children: [
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    Container(
-                      decoration: const BoxDecoration(
-                        border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: 0.5)),
-                        shape: BoxShape.circle,
-                      ),
-                      width: 48,
-                      height: 48,
-                      child: Image(
-                        image: AssetImage(group.imageUrl),
-                        fit: BoxFit.scaleDown,
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => GroupDetailPage(
+                        name: group.name,
                       ),
                     ),
-                    const SizedBox(
-                      width: 16,
-                    ),
-                    Text(group.name, style: const TextStyle(color: Colors.black, fontSize: 16)),
-                    const Spacer(),
-                    const Text('خالية من الحسابات', style: TextStyle(color: QLightGrey, fontSize: 12)),
-                    const Icon(
-                      Icons.arrow_forward_ios,
-                      color: QLightGrey,
-                    ),
-                  ],
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Row(
+                    children: [
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Container(
+                        decoration: const BoxDecoration(
+                          border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: 0.5)),
+                          shape: BoxShape.circle,
+                        ),
+                        width: 48,
+                        height: 48,
+                        child: Image(
+                          image: AssetImage(group.imageUrl),
+                          fit: BoxFit.scaleDown,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Text(group.name, style: const TextStyle(color: Colors.black, fontSize: 16)),
+                      const Spacer(),
+                      const Text('خالية من الحسابات', style: TextStyle(color: QLightGrey, fontSize: 12)),
+                      const Icon(
+                        Icons.arrow_forward_ios,
+                        color: QLightGrey,
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const Divider(

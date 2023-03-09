@@ -59,6 +59,7 @@ class _AddGroupPageState extends State<AddGroupPage> {
               type: types[selected].name,
               imageUrl: 'images/group_image.png',
             );
+            GroupModel.groups.add(group);
             FirebaseFirestore.instance.collection('Group').doc(id).set(group.toMap());
           },
           child: const Text(
@@ -122,10 +123,10 @@ class _AddGroupPageState extends State<AddGroupPage> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(36.0),
+            const Padding(
+              padding: EdgeInsets.all(36.0),
               child: Row(
-                children: const [
+                children: [
                   Text(
                     'النوع',
                     style: TextStyle(fontSize: 16),
