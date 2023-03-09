@@ -11,12 +11,21 @@ class AddQattahPage extends StatefulWidget {
 }
 
 class _AddQattahPageState extends State<AddQattahPage> {
-  String dropdownvalue = 'أنت دفعت المبلغ';
+  String dropdownvalue = '';
   var items = [
+    '',
     'أنت دفعت المبلغ',
     'أنت أعرت المبلغ',
     'هو دفع المبلغ',
     'هو أعارك المبلغ',
+  ];
+  String dropdownvalue2 = '';
+  var mem = [
+    '',
+    'اسم',
+    ' اسم',
+    'اسم',
+    'اسم',
   ];
   @override
   Future<void> _showSimpleDialog() async {
@@ -80,12 +89,24 @@ class _AddQattahPageState extends State<AddQattahPage> {
           child: Column(
             children: [
               Row(
-                children: const [
-                  Expanded(
-                    flex: 1,
-                    child: Text(
-                      'أنت و:',
-                      style: TextStyle(color: QMainGreen),
+                children: [
+                  const Text(
+                    'أنت و:',
+                    style: TextStyle(color: QMainGreen),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: DropdownButton(
+                      items: mem.map((String mem) {
+                        return DropdownMenuItem(value: mem, child: Text(mem));
+                      }).toList(),
+                      value: dropdownvalue2,
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          dropdownvalue2 = newValue!;
+                        });
+                      },
+                      icon: const Icon(Icons.keyboard_arrow_down),
                     ),
                   ),
                 ],
@@ -134,20 +155,28 @@ class _AddQattahPageState extends State<AddQattahPage> {
               const SizedBox(
                 height: 50,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 80),
-                child: DropdownButton(
-                  items: items.map((String items) {
-                    return DropdownMenuItem(value: items, child: Text(items));
-                  }).toList(),
-                  value: dropdownvalue,
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      dropdownvalue = newValue!;
-                    });
-                  },
-                  icon: const Icon(Icons.keyboard_arrow_down),
-                ),
+              Row(
+                children: [
+                  const Text(
+                    'من دفع؟',
+                    style: TextStyle(color: QMainGreen),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 80),
+                    child: DropdownButton(
+                      items: items.map((String items) {
+                        return DropdownMenuItem(value: items, child: Text(items));
+                      }).toList(),
+                      value: dropdownvalue,
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          dropdownvalue = newValue!;
+                        });
+                      },
+                      icon: const Icon(Icons.keyboard_arrow_down),
+                    ),
+                  ),
+                ],
               ),
               const Spacer(),
               Align(

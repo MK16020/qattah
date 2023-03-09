@@ -38,7 +38,6 @@ class MembersPage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    // backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                     padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
                   ),
