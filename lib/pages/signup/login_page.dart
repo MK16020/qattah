@@ -134,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
               title: ' الدخول',
               onPressed: () {
                 signIn();
-                if (errorMessage.isEmpty) {
+                if (errorMessage.isEmpty && emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

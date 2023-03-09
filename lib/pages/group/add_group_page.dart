@@ -3,8 +3,39 @@ import 'package:flutter/material.dart';
 
 import '../../constants/qcolors.dart';
 
-class AddGroupPage extends StatelessWidget {
+class AddGroupPage extends StatefulWidget {
   const AddGroupPage({super.key});
+
+  @override
+  State<AddGroupPage> createState() => _AddGroupPageState();
+}
+
+class _AddGroupPageState extends State<AddGroupPage> {
+  TextEditingController name = TextEditingController();
+  int selected = 4;
+  var types = [
+    GroupType(
+      name: 'المنزل',
+      icon: const Icon(
+        Icons.home,
+        color: Color.fromARGB(255, 67, 153, 70),
+      ),
+    ),
+    GroupType(
+      name: 'شريكان',
+      icon: const Icon(
+        Icons.favorite_outline,
+        color: Color.fromARGB(255, 212, 59, 48),
+      ),
+    ),
+    GroupType(
+      name: 'أخرى',
+      icon: const Icon(
+        Icons.list_alt,
+        color: Color(0XFF4C43BA),
+      ),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +45,7 @@ class AddGroupPage extends StatelessWidget {
           onPressed: () {},
           child: const Text(
             'حفظ',
+            style: TextStyle(color: QMainGreen),
           ),
         ),
         title: const Text('إنشاء مجموعة', style: TextStyle(fontSize: 24)),
@@ -70,10 +102,10 @@ class AddGroupPage extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(36.0),
+            const Padding(
+              padding: EdgeInsets.all(36.0),
               child: Row(
-                children: const [
+                children: [
                   Text(
                     'النوع',
                     style: TextStyle(fontSize: 16),
@@ -84,84 +116,38 @@ class AddGroupPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 32.0, left: 32.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: const BoxDecoration(
-                      // color: Colors.white,
-                      border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: 0.5)),
-                      borderRadius: BorderRadius.all(Radius.circular(24)),
+                  for (int i = 0; i < types.length; i++)
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          selected = i;
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                        decoration: BoxDecoration(
+                          color: (selected == i) ? QLightGrey : null,
+                          border: Border.fromBorderSide(
+                            BorderSide(color: (selected == i) ? QBlack : Colors.grey, width: 0.5),
+                          ),
+                          borderRadius: const BorderRadius.all(Radius.circular(24)),
+                        ),
+                        child: Row(
+                          children: [
+                            types[i].icon,
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            Text(
+                              types[i].name,
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                    width: 100,
-                    height: 48,
-                    child: Row(
-                      children: const [
-                        Icon(
-                          Icons.home,
-                          color: Color.fromARGB(255, 67, 153, 70),
-                        ),
-                        SizedBox(
-                          width: 4,
-                        ),
-                        Text(
-                          'المنزل',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: const BoxDecoration(
-                      // color: Colors.white,
-                      border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: 0.5)),
-                      borderRadius: BorderRadius.all(Radius.circular(24)),
-                    ),
-                    width: 100,
-                    height: 48,
-                    child: Row(
-                      children: const [
-                        Icon(
-                          Icons.favorite_outline,
-                          color: Color.fromARGB(255, 212, 59, 48),
-                        ),
-                        SizedBox(
-                          width: 4,
-                        ),
-                        Text(
-                          'شريكان',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: const BoxDecoration(
-                      // color: Colors.white,
-                      border: Border.fromBorderSide(BorderSide(color: Colors.grey, width: 0.5)),
-                      borderRadius: BorderRadius.all(Radius.circular(24)),
-                    ),
-                    width: 100,
-                    height: 48,
-                    child: Row(
-                      children: const [
-                        Icon(
-                          Icons.list_alt,
-                          color: Color(0XFF4C43BA),
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
-                          'أخرى',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ],
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -170,4 +156,13 @@ class AddGroupPage extends StatelessWidget {
       ),
     );
   }
+}
+
+class GroupType {
+  String name;
+  Icon icon;
+  GroupType({
+    required this.name,
+    required this.icon,
+  });
 }
