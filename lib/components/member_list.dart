@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:qattah_project/models/user_model.dart';
-import 'package:qattah_project/pages/member/add_member_page.dart';
 
 import '../constants/qcolors.dart';
+import '../pages/member/add_member_page.dart';
 import 'member_card.dart';
 
 class MemberList extends StatelessWidget {

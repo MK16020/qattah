@@ -9,7 +9,7 @@ class AddActivityPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
         title: const Text('أحدث النشاطات', style: TextStyle(fontSize: 24)),
         centerTitle: true,
       ),

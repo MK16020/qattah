@@ -22,10 +22,10 @@ class _AddQattahPageState extends State<AddQattahPage> {
   String dropdownvalue2 = '';
   var mem = [
     '',
-    'اسم',
-    ' اسم',
-    'اسم',
-    'اسم',
+    'سارة',
+    ' مريم',
+    'أروى',
+    'نورة',
   ];
   @override
   Future<void> _showSimpleDialog() async {
@@ -59,14 +59,7 @@ class _AddQattahPageState extends State<AddQattahPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios,
-          ),
-        ),
+        automaticallyImplyLeading: false,
         title: const Text('اضافة حساب', style: TextStyle(fontSize: 24)),
         actions: [
           TextButton(
